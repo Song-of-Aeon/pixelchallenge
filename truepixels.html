@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en-US">
+
+
+<head>
+    <title>aeon from the internet</title>
+    <meta charset="utf-8">
+    <meta name="impossible pixels" content="AEON'S IMPOSSIBLE PIXEL CHALLENGE">
+	<link href='https://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet'>
+	<style>
+		body {
+			background-size:     cover;
+			background-repeat:   repeat;
+			background-position: top center;	
+			font-family: 'Philosopher';
+			font-size: 16px;
+			color: black;
+			text-align: center;
+            image-rendering: pixelated;
+            font-family:courier;
+	text-align:center;
+	  text-shadow: 2px 2px #ff0000;
+		}
+	</style>
+</head>
+
+<canvas id="pixelcanvas" width="800" height="350">
+<script src="./canvasinput.js"></script>
+<script>
+
+const bigpixels = new Image(1280, 48);
+bigpixels.src = "./pixels/truepixels.png";
+const cursor = new Image(18, 18);
+cursor.src = "./pixels/cursor.png";
+const bg = new Image(10, 10);
+bg.src = "./pixels/bg.png";
+const truebg = new Image(10, 10);
+truebg.src = "./pixels/truebg.png";
+const asgore = new Image(10, 10);
+asgore.src = "./pixels/asgore.png";
+const uilines = new Image(10, 10);
+uilines.src = "./pixels/uilines.png";
+
+/*
+RULES:
+names in western order
+types of origins:
+game
+anime
+real
+player
+fanon
+video
+*/
+
+var yabusame = [[
+
+]]
+
+var suzumi = [
+[new pixelguy(["Suzumi Kuzu (Hamee)", "hamee", "suzumi"], ["game"], "Len'en 04", "The first pixel, made on October 2nd, 2020."),
+new pixelguy(["Suzumi Kuzu (Ardey)"], ["game"], "Len'en 04", "I didn't pick them for any reason in particular."),
+new pixelguy(["Suzumi Kuzu (Benny)"], ["game"], "Len'en 04", "But since I was only planning on making them, the file everything is stored in is called \"suzumi kuzu.ase\".")],
+
+[new pixelguy(["Tsubakura Enraku?", "tsubakura", "tsurubami"], ["game"], "Len'en 01", "Tsurubami, or Tsubakura? It could go either way."),
+new pixelguy(["Tsubakura Enraku", "tsubakura"], ["game"], "Len'en 04"), "I really like their shottype, regardless."],
+
+[new pixelguy(["Madeline"], ["game"], "Celeste", "In these earlier sprites, I wasn't yet comfortable with making pixels."),
+new pixelguy(["Badeline"], ["game"], "Celeste"), "Although I still really like how some of them turned out."],
+
+[new pixelguy(["Hong Meiling", "meiling"], ["game"], "Touhou 6", "Meiling is a bit weird, but I got an action pose.")],
+
+[new pixelguy(["Morshu"], ["game"], "Link: The Faces of Evil", "The first time I messed with body proportions. Morshu wouldn't look right otherwise."),
+new pixelguy(["RTX Morshu", "rtx"], ["video"], "Hoolopee"), "I hope I was able to convey the terrifying detail of RTX Morshu."],
+
+[new pixelguy(["Rumia"], ["game"], "Touhou 6", "so nano ka~"),
+new pixelguy(["Rumia EX", "shadow", "ex"], ["fanon"], "Concept", "Why is the youkai of darkness so weak, anyway...?"),
+new pixelguy(["Rumia (with ability)", "ability"], ["game"], "Touhou 06"), "Right, that's why."],
+
+[new pixelguy(["Laslow", "lazwald"], ["game"], "Fire Emblem: Fates", "My favorite unit."),
+new pixelguy(["Inigo"], ["game"], "Fire Emblem: Awakening", "My strongest unit. Astra + Armsthrift + Ragnell, baby."),
+new pixelguy(["Dr. Disrespect", "disrespect"], ["real"], "Herschel Beahm IV")],
+
+[new pixelguy(["Crewmate", "among", ""], ["game"], "Among Us", "I think I will continue to post about Among Us."),
+new pixelguy(["Among You"], ["player"], "Aeon"),
+new pixelguy(["Among Drip"], ["fanon"], "Artifact Studios", "I use this little bastard as a test sprite everywhere. It's still one of my favorites.")],
+
+[new pixelguy(["Chara", "human", "player", "determination"], ["game"], "UNDERTALE", "* Determination."),
+new pixelguy(["Core!Frisk", "void"], ["fanon"], "Underverse", "I haven't actually watched it. I just think they look cool.")],
+
+[new pixelguy(["Nagito Komaeda", "nagito", "komaeda", "kanye"], ["game"], "Super Danganronpa 2", "Will the real Komaeda please stand up?"),
+new pixelguy(["Nagito Komaeda (student)", "dr3", "student"], ["anime"], "Danganronpa 3", "This guy is special because he had a perfect stage and audience to flaunt his extreme ideals and devicive methods."),
+new pixelguy(["Servant", "drae"], ["game"], "Danganronpa: Another Episode", "But there are probably countless people in real life who would act the same.")],
+
+
+
+[new pixelguy(["Yukari Yakumo", "yukari", "maribel", "gap"], ["game"], "Touhou Eiyashou ~ Imperishable Night", "comment"),
+new pixelguy(["Yukari Yakumo (casual)", "casual", "yukari", "maribel", "gap"], ["game"], "Touhou Youyoumu ~ Perfect Cherry Blossom", "comment")],
+
+[new pixelguy(["Blue Poison", "blue", "poison"], ["game"], "Arknights", "I can't approve of gacha, but I have to say that Hypergryph's sequel to Plants vs. Zombies is a pretty good successor.")],
+
+[new pixelguy(["Lea"], ["game"], "CrossCode", "CrossCode is my favorite game, but it shows up so early. If I knew I was going to do 100, I probably would have saved it."),
+new pixelguy(["Shizuka Sakai", "shizuka", "sakai"], ["Game"], "CrossCode", "Well, I think they turned out alright.")],
+
+[new pixelguy(["snart_____", "snart"], ["player"], "dumbfuck_kingtut", "Oh? You had the misfortune of meeting snart? I hope you can recover."),
+new pixelguy(["KARR0TSTICK", "carrot", "karrot", "carr0t", "karr0t", "stick"], ["player"], "dumbfuck_kingtut", "And don't be fooled by its shadow self.")],
+
+[new pixelguy(["Isaac"], ["game"], "The Binding of Isaac", "The shortest pixelguy so far."),
+new pixelguy(["Isaac (Brimstone + Technology 2)", "brimstone", "brim", "technology", "tech"], ["game"], "The Binding of Isaac", "Some og runwinners. Not as good anymore, but you can't pass up a blood laser barrage"),
+new pixelguy(["Isaac (Dr. Fetus + Ball of Bandages + Meat Cube)", "fetus", "bandages", "meat"], ["game"], "The Binding of Isaac", "Featuring Edmund's other breadwinner."),],
+
+[new pixelguy(["Gordon Freeman", "gordon", "freeman"], ["game"], "Half-life", "Hey, it's the guy from that youtube series!"),
+new pixelguy(["Gordon Freeman (beta)", "beta"], ["concept"], "Half-life", "I really had trouble with the glasses. The next few times I had to deal with those, I got better at it.")],
+
+[new pixelguy(["Yabusame Houlen", "yabusame", "idiot"], ["game"], "Len'en 01", "You ever play BPoHC's tutorial? Isn't that like. messed up")],
+
+[new pixelguy(["U1", "yuichi"], ["real and game"], "Yuichi Asami/Dance Dance Revolution", "My hero. I originally thought his name was \"uigi\" since I only heard the announcer say it."),
+new pixelguy(["UI (with glasses)"], ["real and game"], "Yuichi Asami/Dance Dance Revolution", "Isn't he just a cool dude?"),
+new pixelguy(["UI (shadow)"], ["game"], "Dance Dance Revolution Hottest Party 3", "Hottest Party 3 is one of the best games on the Wii, no messing around. Song list is great and skill floors and caps are great for your first dancegame."),],
+
+[new pixelguy(["Chiaki Nanami", "chiaki", "nanami", "gamer", "ai"], ["game"], "Super Danganronpa 2", "Eat shit, Ninja."),
+new pixelguy(["Chiaki Nanami (student)", "dr3", "student", "human", "living", "alive"], ["anime"], "Danganronpa 3", "It's a pretty rad school uniform, isn't it?")],
+
+[new pixelguy(["Benrey", "barney", "security"], ["game/video"], "Half-life/Half-life VR but the AI is Self-Aware", "I call him Benrey because \"Barney\" didn't exist until HL2 retrofitted as such. And he's a funny guy."),
+new pixelguy(["Barney Calhoon (HL2)", "hl2", "barney"], ["game"], "Half-life 2", "I played HL2 with the Synergy multiplayer mod, that makes the game like five times as hard. This bitch is just a lose condition hitbox on wheels. I hate him")],
+
+
+
+[new pixelguy(["The Knight", "knight", "hollow", "vessel"], ["game"], "Hollow Knight", "Little guy."),
+new pixelguy(["Hornet"], ["game"], "Hollow Knight", "Oh? From Silksong? Yeah, it's a great game. I'm surprised they were able to keep their original release date."),
+new pixelguy(["Broken Vessel", "vessel", "juicebox"], ["game"], "Hollow Knight", "Another one of the top dogs. Everything abotu this guy just fit perfectly in the 16x16 space and I ended up with a good amount of detail everywhere.")],
+
+[new pixelguy(["Sans (Pacifist/Neutral)", "sans", "snas", "funny one", "pacifist"], ["game"], "UNDERTALE", "did you know that if you are on pacifist sans winks with his left (magic) eye and if you are on genocide he does not"),
+new pixelguy(["Sans (Genocide)", "genocide", "fight", "mad"], ["game"], "UNDERTALE", "and did you know that in DELTARUNE every single major character has a different appearance except for sans"),
+new pixelguy(["Sans (Flowerfell)", "flowerfell", "lantern", "lanterntale"], ["fanon"], "Flowerfell", "The first person I showed this to looked through hundreds of AUs for this and they found \"Lanterntale\". Close enough, so it works as an answer here.")],
+
+[new pixelguy(["Koishi Komeiji (no accessories)"], ["game"], "Touhou 11", "...Don't worry. It's not like that."),
+new pixelguy(["Koishi Komeiji"], ["game"], "Touhou 11", "im koish komai ji")],
+
+[new pixelguy(["isolation-beta.png", "isolation", "beta"], ["???"], "???", "Huh? You got this? There are a couple ways I can imagine you could, but none of them are public." /*Just kidding, I know I'm not exactly running the most secure show here.*/),
+new pixelguy(["[i]", "i", "firegame", "isolation"], ["???"], "???", "You're so interested? Well, remember me for the future. Or, could you be...?"),
+new pixelguy(["i-test.ase", "firegame", "test", "dummy"], ["???"], "???", "hello bread man")],
+
+[new pixelguy(["Hatsune Miku", "miku", "hatsune"], ["software"], "Vocaloid", "mou ikkai"),
+new pixelguy(["Zatsune Miku", "zatsune"], ["fanon"], "concept", "I made pixels of Miku and the prior two years before starting the pixelchallenge. Comparing those to these, the difference is massive.")],
+
+[new pixelguy(["OMORI"], ["game"], "OMORI", "omoi omoi"),
+new pixelguy(["SUNNY"], ["game"], "OMORI", "")],
+
+[new pixelguy(["Quote", "traveler", "traveller" /*just in case*/], ["game"], "Cave Story", "This all started with me copying Cave Story's artstyle, so I went and tried quote with satisfactory and neon results."),
+new pixelguy(["Quote (hard mode)", "hard", "hp", "+"], ["game"], "Cave Story+", "Well, I can get the normal ending with this guy. Maybe I should try it again."),
+new pixelguy(["Quote (Rave Story)", "rave"], ["fanon"], "Rave Story", "you have no fucking money deadbeat")],
+
+[new pixelguy(["Kasane Teto", "teto", "kasane", "baka", "utau"], ["software"], "UTAU", "baka, baka, baka")],
+
+[new pixelguy(["Sou Hiyori", "sou", "hiyori", "shin", "tsukimi"], ["game"], "Your Turn To Die", "He picked that name for himself, so I show it here."),
+new pixelguy(["Sou Hallucination", "hallucination", "shine"], ["game"], "Your Time To Shine", "Your Time To Shine seemed too cool to be true. With it's development, though, I guess it was.")],
+
+[new pixelguy(["Cú Chulainn (Lancer)"], ["game"], "Fate/stay night", "sigma class servant")],
+
+
+
+[new pixelguy(["Buddy Armstrong (Joyful)", "buddy", "joyful"], ["game"], "LISA: the Joyful", "But she still caused less pain than the other girl."),
+new pixelguy(["Buddy Armstrong (Painful)", "buddy", "painful"], ["game"], "LISA: the Painful", "And somehow, was dealt less as well.")],
+
+[new pixelguy(["Madotsuki"], ["game"], "Yume Nikki", "yume miru shoujo"),
+new pixelguy(["Madotsuki (umbrella)", "umbrella", "parasol"], ["game"], "Yume Nikki", "Stay out of the rain."),
+new pixelguy(["Madotsuki (stoplight)", "stoplight", "traffic", "traffic light"], ["game"], "Yume Nikki", "Green means go, red means stop, yellow means go faster.")],
+
+[new pixelguy(["Zacharie", "zach"], ["game"], "OFF", "ha ha ha"),
+new pixelguy(["Zacharie (cat)", "cat", "judge"], ["game"], "OFF", "meow")],
+
+[new pixelguy(["Wadanohara"], ["game"], "Wadanohara and the Great Blue Sea", "comment")],
+
+[new pixelguy(["Wilson Percival Higgsbury", "wilson"], ["game"], "Don't Starve", "Rollbacks, like, totally aren't cheating. Neither is using workshop Koishi."),
+new pixelguy(["Wilson Percival Higgsbury (winter)", "winter", "beard"], ["game"], "Don't Starve", "Although Koishi can't bear the cold like this champ can.")],
+
+[new pixelguy(["Dimentio"], ["game"], "Super Paper Mario", "Ciao!"),
+new pixelguy(["Jevil"], ["game"], "kanotynes", "IF YOUR HP DROPS TO 0, YOU LOSE!"),
+new pixelguy(["Clownpiece"], ["game"], "Touhou 15", "It's lunatic time!")],
+
+[new pixelguy(["The Drifter", "drifter", "magician"], ["game"], "Hyper Light Drifter", "I played this whole game on Stream Remote Play. It works really well."),
+new pixelguy(["The Drifter (Guardian)", "guardian", "pink"], ["type"], "source", "Don't die out there.")],
+
+[new pixelguy(["Kaho"], ["game"], "Momodora: Reverie Under the Moonlight", "GM:S represent!!!!! (pixelchallenge is made in javascript)")],
+
+[new pixelguy(["Hatty Hattington (possessed)"], ["game"], "Battleblock Theater", "So stylish."),
+new pixelguy(["Hatty Hattington"], ["game"], "Battleblock Theater", "Dumbass didn't even have a hat beforehand.")],
+
+[new pixelguy(["Peacock"], ["game"], "Skullgirls", "what a funny kid"),
+new pixelguy(["Peacock (alt)", "alt", "color", "colour", "black"], ["game"], "Skullgirls", "what a cool skin")],
+
+
+
+[new pixelguy(["Cole Phelps", "l.a. noire", "cole"], ["game"], "L.A. Noire", "I haven't played much. He's just a dude."),
+new pixelguy(["L.A.M.A.⅃", "l.a.m.a.j", "lamaj", "l.a.m.a.l", "lamal"], ["misc."], "SiIvagunner", "I know I'm gonna receive a lotta hate for this, and it really is a close fight, but I think LamaJ comes out on top."),
+new pixelguy(["ƎЯIOIOIRE", "erioioire"], ["misc."], "SiIvagunner", "didn't they just play that Winnie the Pooh game for like four hours while debating this")],
+
+[new pixelguy(["Boshy"], ["type"], "source", "lol u died")],
+
+[new pixelguy(["George Gus", "george", "gus"], ["misc."], "Anime Character Generator", "We really just put everything we could on one monster. It barely fit in 16x16."),
+new pixelguy(["Amon Gus", "amon", "gus"], ["misc."], "Anime Character Generator", "Amen.")],
+
+[new pixelguy(["Monika"], ["game"], "Doki Doki Literature Club", "\"Hey, can you hear me? Ah ha, I hope so. I can't do much here... but thanks for remembering me!\""),
+new pixelguy(["Monika (beta)"], ["concept"], "Anime Character Generator", "\"Is this... me? Of course, character revisions had to happen, but I don't like thinking about it very much.\"")],
+
+[new pixelguy(["Claire Elford", "claire", "elford"], ["game"], "Witch's Heart", "Ten thousand? It only took me twelve to beat Sans, man. Step it up."),
+new pixelguy(["Claire Elford (formal)", "dress", "formal"], ["game"], "Witch's Heart", "Dress up!"),
+new pixelguy(["Claire Elford (young)", "kid", "young"], ["game"], "Witch's Heart", "There are way too many variations to fit here. Ridiculous amount of art in this game.")],
+
+[new pixelguy(["Little Mac"], ["game"], "Punch Out!!", "The smallest adult in the pixelchallenge thus far, clocking in at only 13 pixels tall. That's as small as Chara!"),
+new pixelguy(["Little Mac (jacket)", "hoodie", "jacket", "alt", "skin", "color", "colour"], ["type"], "Punch Out!!", "Wait, is it okay to say other pixeldude's names? Whatever, you probably have them if you're this far."),
+new pixelguy(["Little Mac (wireframe)", "wireframe", "alt", "skin", "color", "colour"], ["type"], "Punch Out!! (arcade)", "By the way, I main Little Mac (and Robin). For real and seriously I just like the way he moves.")],
+
+[new pixelguy(["Reimu (PC98)"], ["game"], "Touhou 1", "She's a bit tall, isn't she? The miko outfit is too cool to be wasted, though.")],
+
+[new pixelguy(["Akari Mizunashi (summer)"], ["anime"], "Aria", "That unending sea..."),
+new pixelguy(["Akari Mizunashi (winter)"], ["anime"], "Aria", "That azure sky...")],
+
+[new pixelguy(["Oriental Insomniac", "battleworn", "oriental", "insomniac", "boss"], ["game"], "Rhythm Doctor", "Technically, \"Battleworn Insomniac.\" The older name is better."),
+new pixelguy(["Oriental Insomniac (miss)", "damage", "miss"], ["game"], "Rhythm Doctor", "Nothing sold me on the game like Super Oriental Insomniac."),
+new pixelguy(["Oriental Insomniac (dead)", "dead", "fail"], ["game"], "Rhythm Doctor", "he dead boy he dead u fucked up")],
+
+[new pixelguy(["Mike Gotokuji", "mike", "michael"], ["game"], "Touhou 18", "MICHAEL (he is michael)")],
+
+
+
+[new pixelguy(["Lime"], ["game"], "Witch's Heart", "The big five-oh. I mean, 51, but I had to talk about michael."),
+new pixelguy(["E016", "human", "living", "alive"], ["game"], "Witch's Heart", "Halfway through, basically. The next plenty are pretty esoteric before I got back into the flow."),
+new pixelguy(["Lime (photo shoot)", "pirate", "photo", "picture"], ["game"], "Witch's Heart -Bonus Stage-", "Oh, and Lime? Funny girl, huh...")],
+
+[new pixelguy(["Julius Anderson", "julius"], ["type"], "Slimes", "I was thinking some of the guys had started to become samey, so I tried to change things up a bit."),
+new pixelguy(["Tai Hong", "tai" /*, "healer"*/], ["game"], "Slimes", "And I really like how the artstyle translated here. By the way, you didn't try to call this guy \"Healer\", did you?")],
+
+[new pixelguy(["Meat Boy"], ["type"], "source", "24000 deaths for Golden God."),
+new pixelguy(["Bandage Girl"], ["type"], "source", "Haven't beaten the game until you've cleared Four Letter Word."),
+new pixelguy(["Dr. Fetus"], ["type"], "source", "No, it's not Nugget. It was what, seven years for that? I beat it in like three hours.")],
+
+[new pixelguy(["Neptune"], ["type"], "source", "It's kinda a good game. At least funny. Well, actually, not really, but"),
+new pixelguy(["Purple Heart"], ["type"], "source", "I think she has a ton of other forms, but I don't know 'em. I only played the first one.")],
+
+[new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment")],
+
+[new pixelguy(["Noel Cerquetti (Witch of Mortal Fate)", "no arm", "witch", "noel", "contract"], ["Game"], "Noel The Mortal Fate", "Someone get this man a programmer"),
+new pixelguy(["Noel Cerquetti (Casino)", "gambling", "casino", "dress", "6"], ["game"], "Noel The Mortal Fate Season 6", "But the talksprites are really good, and no better place to see that but this chapter (season)."),
+new pixelguy(["Noel Cerquetti (Human)", "human", "arm", "noel"], ["game"], "Noel The Mortal Fate", "Game about killing a rich guy. It's awesome.")],
+
+[new pixelguy(["name"], ["type"], "source", "have you perchance played the chosen hero and the dark lord, the worlds greatest rpgmaker game"),
+new pixelguy(["name"], ["type"], "source", "hey bread man when's that mod coming"),
+new pixelguy(["name"], ["type"], "source", "just like me......... (its a code joke because rpgmaker mv uses javascript instead of ruby and the pixelchallenge is made in javascript)")],
+
+[new pixelguy(["/2D Assets/Platformer Assets Base/PNG/Player/p1_stand.png"], ["misc."], "Kenney Game Assets", "kennie")],
+
+[new pixelguy(["name"], ["type"], "Chantelise", "From the guys who made the girl from the \"Capitalism, Ho!\" image. It's got the pit of 100 trials and it takes really really long.")],
+
+[new pixelguy(["Oscar"], ["game"], "Summer Nightmare", "...Noisy.")],
+
+
+
+[new pixelguy(["Tenshi"], ["game"], "Jigoku Kisetsukan", "comment"),
+new pixelguy(["TenSHI", "fear", "death", "hp"], ["game"], "source", "comment")],
+
+[new pixelguy(["Buckethead"], ["real"], "Brian Carroll", "comment")],
+
+//jj start
+
+[new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment")],
+
+[new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment")],
+
+[new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment")],
+
+[new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment")],
+
+[new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment")],
+
+//j end
+
+[new pixelguy(["Nyanco"], ["real/game"], "Nyanco Channel", "comment")],
+
+[new pixelguy(["name"], ["type"], "Teslagrad", "comment"),
+new pixelguy(["name"], ["type"], "Teslagrad", "comment"),
+new pixelguy(["name"], ["type"], "Teslagrad", "comment")],
+
+[new pixelguy(["name"], ["type"], "Iwate Mountain Dance", "Is it really possible? Such a blindingly golden country?")],
+
+
+
+
+
+/*
+[new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment"),
+new pixelguy(["name"], ["type"], "source", "comment")],
+*/
+
+];
+
+var pixeltotal = 0;
+for (var i=0; i<suzumi.length; i++) {
+    pixeltotal += suzumi[i].length;
+}
+
+var pixels = [];
+for (var i=1; i<70; i++) {
+    pixels[i] = [new Image(16, 16), new Image(16, 16), new Image(16, 16)];
+    pixels[i][0].src = "./pixels/" + i + "a.png";
+    pixels[i][1].src = "./pixels/" + i + "b.png";
+    pixels[i][2].src = "./pixels/" + i + "c.png";
+}
+var pixels = [];
+for (var i=0; i<80; i++) {
+  pixels[i] = [0, 1, 2];
+}
+var marked = [];
+for (var i = 0; i < 100; i++) {
+  marked[i] = [0, 1, 2];
+}
+var state = false;
+var pos = [];
+pos[0] = 0;
+pos[1] = 0;
+pos[2] = 3;
+setTimeout(step, 150);
+const canvas = document.getElementById("pixelcanvas");
+const pixelzone = canvas.getContext("2d");
+    pixelzone.imageSmoothingEnabled = false;
+var vol = 1.0;
+
+var defposx = 320;
+var defposy = 126;
+var camerapos = 0;
+var cameramod = defposx-camerapos;
+
+pixelzone.font = "10px Philosopher";
+camera = {
+	x: 0,
+	y: 0
+}
+
+var pixelgets = 0;
+
+var input = new CanvasInput({
+	canvas:document.getElementById("pixelcanvas"),
+	x: 88,
+	y: 274,
+	fontFamily: "Philosopher",
+	fontSize: 20,
+	width: 117,
+	height: 16,
+	onsubmit: guess,
+	borderColor: "#000000",
+	fontColor: "#FFF",
+	borderRadius: 0,
+	backgroundColor: "black",
+});
+input.render();
+inputy = 300;
+var count = 0;
+
+
+
+function step() {
+	//pixelzone.clearRect(0, 0, 1000, 400);
+	//cameralooky = (pos[0]-6)*48
+	camerapos = clamp((pos[0]-5)*48, 0, 5267-defposx-47)
+	cameramod = defposx-camerapos;
+	pixelzone.fillStyle = "pink";
+	//pixelzone.fillRect(0, 0, 1000, 400);
+	
+	
+	
+	//pixelzone.fillRect(0, 0, defposx-47, 400);
+	pixelzone.fillStyle = "black";
+	
+    //pixelzone.drawImage(bigpixels, (pos[1]+(Math.floor(pos[0]/3)*10))*16, (pos[0]%3)*16, 16, 16, 1500, 201, 256, 256);
+	
+	
+	
+	//camera.x = pos[0]
+	drawlayerback();
+	drawlayerpixels();
+	drawlayerui();
+	count++;
+	//input.render();
+	setTimeout(step, 30);
+}
+
+function drawlayerback() {
+	
+	pixelzone.drawImage(truebg, 0, 0);
+	pixelzone.drawImage(asgore, 0, 0, 800, 350, 0, 350, 800, 350*-(Math.abs(Math.cos(count/70))));
+	pixelzone.fillRect(defposx-47, 0, 800, 350);
+	pixelzone.fillRect(0, 0, 36, 350);
+	//input.render();
+	//pixelzone.fillRect(0, 271, 36, 77);
+}
+
+function drawlayerpixels() {
+	pixelzone.drawImage(uilines, 0, 0);
+	pixelzone.drawImage(bg, cameramod-47, defposy-47)
+    for (var i=0; i<pixels.length; i++) {
+        for (var j=0; j<3; j++) {
+			if (Math.abs(i-pos[0]) <= 9 && i<93) {
+				pixelzone.shadowColor = "rgba(1,1,1,0.6)";
+				pixelzone.shadowBlur = 4;
+			} else {
+				pixelzone.shadowColor = "none";
+				pixelzone.shadowBlur = 0;
+			}
+            pixelzone.drawImage(bigpixels, i*16, j*16, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
+        }
+    }
+	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
+	pixelzone.shadowBlur = 4;
+	pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
+	pixelzone.shadowColor = "none";
+	pixelzone.shadowBlur = 0;
+}
+
+function drawlayerui() {
+	//pixelzone.clearRect(433, 293, 214, 34);
+	pixelzone.shadowColor = "grey";
+	pixelzone.shadowBlur = 2;
+	pixelzone.shadowOffsetX = 24;
+	pixelzone.fillStyle = "white";
+	if (suzumi[pos[0]][pos[1]].completed) {
+		pixelzone.font = "24px Philosopher";
+		pixelzone.fillText(suzumi[pos[0]][pos[1]].names[0], 300, 45);
+		pixelzone.font = "14px Philosopher";
+		pixelzone.shadowColor = "rgba(1,1,1,1)";
+		pixelzone.shadowBlur = 2;
+		pixelzone.shadowOffsetX = 0;
+		pixelzone.fillText(suzumi[pos[0]][pos[1]].source, 50, 20);
+		if (pixelgets >= 1) {
+			pixelzone.fillText(suzumi[pos[0]][pos[1]].comment, 287, 300);
+		}
+	} else {
+		pixelzone.font = "24px Philosopher";
+		pixelzone.fillText(pos[0]+1 + String.fromCharCode(65+pos[1]), 300, 45);
+		pixelzone.font = "14px Philosopher";
+		pixelzone.shadowColor = "rgba(1,1,1,1)";
+		pixelzone.shadowBlur = 2;
+		pixelzone.shadowOffsetX = 0;
+		pixelzone.fillText("From: " + suzumi[pos[0]][pos[1]].hints[0], 50, 20);
+	}
+	pixelzone.fillText(pixelgets + " / " + pixeltotal, 700, 50);
+	//pixelzone.fillText(suzumi[pos[0]][pos[1]].hints[0], 140, 300);
+    pixelzone.drawImage(cursor, cameramod+pos[0]*48-6, defposy+pos[1]*48-6, 60, 60);
+	if (state) {
+		pixelzone.drawImage(cursor, pos[2]*100, 300);
+	}
+	pixelzone.shadowColor = "none";
+	pixelzone.shadowBlur = 0;
+}
+
+document.addEventListener('keydown', function(event) {
+	let i;
+	switch (event.keyCode) {
+		case 37:
+			if (state) {
+				pos[2]--;
+			} else {
+				pos[0]--;
+			}
+			break;
+		
+		case 39:
+			if (state) {
+				pos[2]++;
+			} else {
+				pos[0]++;
+			}
+			break;
+		
+		case 40:
+			pos[1]++;
+			break;
+		
+		case 38: //Up
+			pos[1]--;
+			break;
+		
+		case 13:
+			//state = !state;
+			input.focus();
+			break;
+	}
+	
+	pos[0] = clamp(pos[0], 0, suzumi.length-1);
+	pos[1] = clamp(pos[1], 0, suzumi[pos[0]].length-1);
+	pos[2] = clamp(pos[2], 0, 3);
+	/*while (suzumi[pos[0]].length-1 < pos[1]) {
+		pos[1]--;
+	}*/
+});
+
+function guess() {
+	//console.log(input._value);
+	var myguy = input._value.toLowerCase();
+	var yourguy;
+	var gotone = false;
+	var i;
+	console.log(myguy);
+	
+		
+	for (i=0; i<suzumi[pos[0]].length; i++) {
+		yourguy = suzumi[pos[0]][pos[1]].names[i].toLowerCase();
+		console.log(yourguy);
+		if (yourguy.indexOf(myguy) != -1) {
+			gotone = true;
+		}
+	}
+    //if (suzumi[pos[0]][pos[1]].names.indexOf(input._value) != -1 && !suzumi[pos[0]][pos[1]].completed) {
+		if (gotone) {
+		console.log("yeah");
+		suzumi[pos[0]][pos[1]].completed = true;
+		pixelgets++;
+		input._value = "";
+	}
+}
+function pixelguy(names_=["named"], hints_=["hinted"], source_="sourced", comment_="commented", special_=false) {
+	this.names = names_;
+	this.hints = hints_;
+	this.source = source_;
+	this.comment = comment_;
+	this.special = special_;
+	this.completed = false;
+}
+
+function save() {
+	if (supports_html5_storage()) {
+	   var myDataString = localStorage.getItem("pixeldudes");
+	   localStorage.setItem("pixeldudes", suzumi);
+	   alert(myDataString);
+	   myDataString = localStorage.getItem("pixelgots");
+	   localStorage.setItem("pixelgots", pixelgets);
+	   alert(myDataString);
+	}
+}
+
+
+
+
+
+
+
+//stuff that isnt mine
+function clamp(num, min, max) {
+  return num <= min 
+    ? min 
+    : num >= max 
+      ? max 
+      : num
+} //did not make this lo l
+
+function supports_html5_storage() {
+      try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+      }
+      catch (e) {
+        return false;
+      }
+}
+
+</script>
+   
+</body>
+</html>
