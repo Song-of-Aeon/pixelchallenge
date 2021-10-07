@@ -63,19 +63,19 @@ new pixelguy(["Suzumi Kuzu (Ardey)"], ["game"], "Len'en 04", "I didn't pick them
 new pixelguy(["Suzumi Kuzu (Benny)"], ["game"], "Len'en 04", "But since I was only planning on making them, the file everything is stored in is called \"suzumi kuzu.ase\".")],
 
 [new pixelguy(["Tsubakura Enraku?", "tsubakura", "tsurubami"], ["game"], "Len'en 01", "Tsurubami, or Tsubakura? It could go either way."),
-new pixelguy(["Tsubakura Enraku", "tsubakura"], ["game"], "Len'en 04"), "I really like their shottype, regardless."],
+new pixelguy(["Tsubakura Enraku", "tsubakura"], ["game"], "Len'en 04", "I really like their shottype, regardless.")],
 
 [new pixelguy(["Madeline"], ["game"], "Celeste", "In these earlier sprites, I wasn't yet comfortable with making pixels."),
-new pixelguy(["Badeline"], ["game"], "Celeste"), "Although I still really like how some of them turned out."],
+new pixelguy(["Badeline"], ["game"], "Celeste", "Although I still really like how some of them turned out.")],
 
 [new pixelguy(["Hong Meiling", "meiling"], ["game"], "Touhou 6", "Meiling is a bit weird, but I got an action pose.")],
 
 [new pixelguy(["Morshu"], ["game"], "Link: The Faces of Evil", "The first time I messed with body proportions. Morshu wouldn't look right otherwise."),
-new pixelguy(["RTX Morshu", "rtx"], ["video"], "Hoolopee"), "I hope I was able to convey the terrifying detail of RTX Morshu."],
+new pixelguy(["RTX Morshu", "rtx"], ["video"], "Hoolopee", "I hope I was able to convey the terrifying detail of RTX Morshu.")],
 
 [new pixelguy(["Rumia"], ["game"], "Touhou 6", "so nano ka~"),
 new pixelguy(["Rumia EX", "shadow", "ex"], ["fanon"], "Concept", "Why is the youkai of darkness so weak, anyway...?"),
-new pixelguy(["Rumia (with ability)", "ability"], ["game"], "Touhou 06"), "Right, that's why."],
+new pixelguy(["Rumia (with ability)", "ability"], ["game"], "Touhou 06", "Right, that's why.")],
 
 [new pixelguy(["Laslow", "lazwald"], ["game"], "Fire Emblem: Fates", "My favorite unit."),
 new pixelguy(["Inigo"], ["game"], "Fire Emblem: Awakening", "My strongest unit. Astra + Armsthrift + Ragnell, baby."),
@@ -374,7 +374,10 @@ var count = 0;
 function step() {
 	//pixelzone.clearRect(0, 0, 1000, 400);
 	//cameralooky = (pos[0]-6)*48
-	camerapos = clamp((pos[0]-5)*48, 0, 5267-defposx-47)
+	difference = clamp((pos[0]-4)*48, 0, 5267-defposx-47);
+	camerapos += (difference-camerapos)*.2;
+	//x += (INITIALIZE.x - x) * .1;
+
 	cameramod = defposx-camerapos;
 	pixelzone.fillStyle = "pink";
 	//pixelzone.fillRect(0, 0, 1000, 400);
@@ -386,7 +389,7 @@ function step() {
 	
     //pixelzone.drawImage(bigpixels, (pos[1]+(Math.floor(pos[0]/3)*10))*16, (pos[0]%3)*16, 16, 16, 1500, 201, 256, 256);
 	
-	
+	myballs = input._value;
 	
 	//camera.x = pos[0]
 	drawlayerback();
@@ -394,25 +397,17 @@ function step() {
 	drawlayerui();
 	count++;
 	//input.render();
-	setTimeout(step, 30);
+	//setTimeout(step, 30);
+	window.requestAnimationFrame(step);
 }
 
 function drawlayerback() {
-	
+	pixelzone.fillRect(0, 0, 800, 350);
 	pixelzone.drawImage(truebg, 0, 0);
-	pixelzone.drawImage(asgore, 0, 0, 800, 350, 0, 350, 800, 350*-(Math.abs(Math.cos(count/70))));
-	pixelzone.fillRect(defposx-47, 0, 800, 350);
-	pixelzone.fillRect(0, 0, 36, 350);
-	//input.render();
-	//pixelzone.fillRect(0, 271, 36, 77);
-}
-
-function drawlayerpixels() {
-	pixelzone.drawImage(uilines, 0, 0);
-	pixelzone.drawImage(bg, cameramod-47, defposy-47)
+	pixelzone.drawImage(bg, defposx-cameramod, 0, 5267, 191, defposx-47, defposy-47, 5267, 191)
     for (var i=0; i<pixels.length; i++) {
-        for (var j=0; j<3; j++) {
-			if (Math.abs(i-pos[0]) <= 9 && i<93) {
+        for (var j=0; j<3 && Math.abs(pos[0]-i)<10; j++) {
+			if (Math.abs(i-pos[0]) <= 10 && i<93) {
 				pixelzone.shadowColor = "rgba(1,1,1,0.6)";
 				pixelzone.shadowBlur = 4;
 			} else {
@@ -422,6 +417,19 @@ function drawlayerpixels() {
             pixelzone.drawImage(bigpixels, i*16, j*16, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
         }
     }
+	pixelzone.shadowColor = "none";
+	pixelzone.shadowBlur = 0;
+	pixelzone.fillRect(0, 0, 270, 350);
+	pixelzone.drawImage(asgore, 0, 0, 800, 350, 0, 350, 800, 350*-(Math.abs(Math.cos(count/70))));
+	//pixelzone.fillRect(defposx-47, 0, 800, 350);
+	pixelzone.fillRect(0, 0, 36, 350);
+	pixelzone.drawImage(uilines, 0, 0);
+	//input.render();
+	//pixelzone.fillRect(0, 271, 36, 77);
+}
+//88 274 131 30
+function drawlayerpixels() {
+	
 	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
 	pixelzone.shadowBlur = 4;
 	pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
@@ -463,6 +471,11 @@ function drawlayerui() {
 	}
 	pixelzone.shadowColor = "none";
 	pixelzone.shadowBlur = 0;
+	pixelzone.fillStyle = "black";
+	pixelzone.fillRect(88, 274, 131, 30);
+	pixelzone.fillStyle = "white";
+	pixelzone.font = "24px Philosopher";
+	pixelzone.fillText(myballs, 92, 295);
 }
 
 document.addEventListener('keydown', function(event) {
