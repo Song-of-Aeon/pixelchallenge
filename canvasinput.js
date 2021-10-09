@@ -1292,12 +1292,13 @@
      */
     _textWidth: function(text) {
       var self = this,
-        ctx = self._renderCtx;
+      ctx = self._renderCtx;
 
-      ctx.font = self._fontStyle + ' ' + self._fontWeight + ' ' + self._fontSize + 'px ' + self._fontFamily;
-      ctx.textAlign = 'left';
+      //didnt work so i just said no
+      //ctx.font = self._fontStyle + ' ' + self._fontWeight + ' ' + self._fontSize + 'px ' + self._fontFamily;
+      //ctx.textAlign = 'left';
 
-      return ctx.measureText(text).width;
+      //return ctx.measureText(text).width;
     },
 
     /**
