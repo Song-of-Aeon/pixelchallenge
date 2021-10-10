@@ -26,6 +26,7 @@
 
 <canvas id="pixelcanvas" width="800" height="350">
 <script src="./canvasinput.js"></script>
+<script src="./newgrounds.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/PsychoGoldfishNG/newgrounds.io-for-javascript-html5@8772ef4/bin/newgroundsio.min.js"></script>
 <script>
 
@@ -198,8 +199,8 @@ new pixelguy(["Madotsuki (stoplight)", "stoplight", "traffic", "traffic light"],
 new pixelguy(["Zacharie (cat)", "cat", "judge"], ["game"], "OFF", "meow")],
 
 [new pixelguy(["Wadanohara"], ["game"], "Wadanohara and the Great Blue Sea", "This is one of the sprites I almost entirely remade later.\nNow I think it's pretty cool, though."),
-new pixelguy(["Wadanohara (gift outfit)"], ["game"], "Wadanohara and the Great Blue Sea", "america.............."),
-new pixelguy(["Wadanohara (ending)"], ["game"], "Wadanohara and the Great Blue Sea", "Please, always remain who you are.\n(thanks vgperson)")],
+new pixelguy(["Wadanohara (gift outfit)", "outfit", "uniform", "gift", "wadanohara"], ["game"], "Wadanohara and the Great Blue Sea", "america.............."),
+new pixelguy(["Wadanohara (ending)", "end", "witch", "sea"], ["game"], "Wadanohara and the Great Blue Sea", "Please, always remain who you are.\n(thanks vgperson)")],
 
 [new pixelguy(["Wilson Percival Higgsbury", "wilson"], ["game"], "Don't Starve", "Rollbacks, like, totally aren't cheating. Neither is using workshop Koishi."),
 new pixelguy(["Wilson Percival Higgsbury (winter)", "winter", "beard"], ["game"], "Don't Starve", "Although Koishi can't bear the cold like this champ can.")],
@@ -422,10 +423,10 @@ pixeltotal -= 2;
 
 var pixels = [];
 for (var i=1; i<70; i++) {
-    pixels[i] = [new Image(16, 16), new Image(16, 16), new Image(16, 16)];
-    pixels[i][0].src = "./pixels/" + i + "a.png";
-    pixels[i][1].src = "./pixels/" + i + "b.png";
-    pixels[i][2].src = "./pixels/" + i + "c.png";
+    //pixels[i] = [new Image(16, 16), new Image(16, 16), new Image(16, 16)];
+    //pixels[i][0].src = "./pixels/" + i + "a.png";
+    //pixels[i][1].src = "./pixels/" + i + "b.png";
+    //pixels[i][2].src = "./pixels/" + i + "c.png";
 }
 var pixels = [];
 for (var i=0; i<80; i++) {
@@ -580,12 +581,16 @@ function step() {
 	count++;
 	//input.render();
 	//setTimeout(step, 30);
+
+	Newgrounds.Update(60/1000);
+	Newgrounds.Render(pixelzone, 35);
+
 	window.requestAnimationFrame(step);
 }
 
 function drawlayerback() {
 	pixelzone.fillRect(0, 0, 800, 350);
-	pixelzone.drawImage(truebg, 0, 0);
+	//pixelzone.drawImage(truebg, 0, 0);
 	pixelzone.drawImage(bg, defposx-cameramod, 0, 5267, 191, defposx-47, defposy-47, 5267, 191)
     
 	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
@@ -1116,62 +1121,11 @@ function wrapText(context, text, x, y, maxWidth=500, lineHeight=20) {
 	}
 }
 
-var ngio = new Newgrounds.io.core("39685:NJ1KkPGb", "qsqKxz5dJouIkUNe3NBppQ==");
-
-/* vars to record any medals and scoreboards that get loaded */
-var medals, scoreboards;
-
-/* handle loaded medals */
-function onMedalsLoaded(result) {
-	if (result.success) medals = result.medals;
-}
-
-/* handle loaded scores */
-function onScoreboardsLoaded(result) {
-	if (result.success) scoreboards = result.scoreboards;
-}
-
-/* load our medals and scoreboards from the server */
-ngio.queueComponent("Medal.getList", {}, onMedalsLoaded);
-ngio.queueComponent("ScoreBoard.getBoards", {}, onScoreboardsLoaded);
-ngio.executeQueue();
-
-/* You could use this function to draw the medal notification on-screen */
-function onMedalUnlocked(medal) {
-	console.log('MEDAL GET:', medal.name);
-}
-
-function unlockMedal(medal_name) {
-
-	/* If there is no user attached to our ngio object, it means the user isn't logged in and we can't unlock anything */
-	if (!ngio.user) return;
-
-	var medal;
-
-	for (var i = 0; i < medals.length; i++) {
-
-		medal = medals[i];
-
-		/* look for a matching medal name */
-		if (medal.name == medal_name) {
-
-			/* we can skip unlocking a medal that's already been earned */
-			if (!medal.unlocked) {
-
-				/* unlock the medal from the server */
-				ngio.callComponent('Medal.unlock', {id:medal.id}, function(result) {
-
-					if (result.success) onMedalUnlocked(result.medal);
-
-				});
-			}
-
-			return;
-		}
-	}
-}
-
-unlockMedal("testachievement");
+//var ngio = new Newgrounds.io.core("39685:NJ1KkPGb", "qsqKxz5dJouIkUNe3NBppQ==");
+Newgrounds.Init("53212:ZDBTgYlh", "ZK7yEH+SiqNzZrVrF70vPg==",true);
+Newgrounds.UnlockMedal(0);
+Newgrounds.PostScore(0, 12345);
+console.log("dinkleshit");
 
 </script>
    
