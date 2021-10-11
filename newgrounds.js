@@ -107,7 +107,7 @@ const Newgrounds =
 
     UnlockMedal(index)
     {
-        console.log(index);
+        //console.log(index);
         if (!enableNewgrounds || !this.medals || !this.medals[index]){
             return;
         }
@@ -166,7 +166,7 @@ const Newgrounds =
         if (xmlHttp.responseText)
         {
             if (this.debug)
-                console.log(xmlHttp.responseText);
+                //console.log(xmlHttp.responseText);
 
             this.responseText = xmlHttp.responseText;
             return JSON.parse(xmlHttp.responseText);

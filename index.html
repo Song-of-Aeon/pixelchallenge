@@ -194,7 +194,7 @@ new pixelguy(["Madotsuki (umbrella)", "umbrella", "parasol"], ["dream"], "Yume N
 new pixelguy(["Madotsuki (stoplight)", "stoplight", "traffic", "traffic light"], ["dream"], "Yume Nikki", "Green means go, red means stop, yellow means go faster.")],
 
 [new pixelguy(["Zacharie", "zach"], ["game"], "OFF", "ha ha ha"),
-new pixelguy(["Zacharie (cat)", "cat", "judge"], ["game"], "OFF", "meow")],
+new pixelguy(["Zacharie (cat)", "cat", "judge"], ["game"], "OFF", "miaou")],
 
 [new pixelguy(["Wadanohara"], ["game"], "Wadanohara and the Great Blue Sea", "This is one of the sprites I almost entirely remade later.\nNow I think it's pretty cool, though."),
 new pixelguy(["Wadanohara (gift outfit)", "outfit", "uniform", "gift", "wadanohara"], ["game"], "Wadanohara and the Great Blue Sea", "america.............."),
@@ -208,7 +208,7 @@ new pixelguy(["Jevil"], ["game"], "kanotynes", "* IF YOUR HP DROPS TO 0, YOU LOS
 new pixelguy(["Clownpiece"], ["game"], "Touhou 15", "It's lunatic time!")],
 
 [new pixelguy(["The Drifter", "drifter", "magician"], ["game"], "Hyper Light Drifter", "I played this whole game on Stream Remote Play. It works really well."),
-new pixelguy(["The Drifter (Guardian)", "guardian", "pink"], ["game"], "Hyper Light Drifter", "Don't die out there.")],
+new pixelguy(["The Drifter (Guardian)", "guardian", "pink", "p2", "alt"], ["game"], "Hyper Light Drifter", "Don't die out there.")],
 
 [new pixelguy(["Kaho"], ["game"], "Momodora:\nReverie Under the Moonlight", "GM:S represent!!!!! (pixelchallenge is made in javascript)")],
 
@@ -222,7 +222,7 @@ new pixelguy(["Peacock (alt)", "alt", "color", "colour", "black"], ["game"], "Sk
 
 [new pixelguy(["Cole Phelps", "l.a. noire", "cole"], ["game"], "L.A. Noire", "I haven't played much. He's just a dude."),
 new pixelguy(["L.A.M.A.⅃", "l.a.m.a.j", "lamaj", "l.a.m.a.l", "lamal"], ["misc."], "SiIvagunner", "I know I'm gonna receive a lotta hate for this, and it really is\na close fight, but I think LamaJ comes out on top."),
-new pixelguy(["ƎЯIOIOIRE", "erioioire"], ["misc."], "SiIvagunner", "didn't they just play that winnie the pooh game for like four hours while debating this")],
+new pixelguy(["ƎЯIOIOIRE", "erioioire"], ["misc."], "SiIvagunner", "didn't they just play that winnie the pooh flash for like four hours while debating that? never change, siiva.\nahhh, i should have done some kfad for the pixelchallenge.")],
 
 [new pixelguy(["Boshy"], ["\"game\""], "I Wanna Be The Boshy", "lol u died")],
 
@@ -312,7 +312,7 @@ new pixelguy(["Hank J. Wimbleton", "hank", "motherfucker"], ["flash"], "Madness 
 
 [new pixelguy(["Nyanco"], ["real/game"], "Nyanco Channel", "Somebody get this catgirl a programmer.\nRPGMaker can be great, but for what she used it for?\nWell, at least they ended up funny.")],
 
-[new pixelguy(["Teslakid (escapee)", "teslakid", "tesla", "kid"], ["game"], "Teslagrad", "Literally nine teen eighty four."),
+[new pixelguy(["Teslakid (escapee)", "teslakid", "tesla", "kid", "escape", "start"], ["game"], "Teslagrad", "Literally nine teen eighty four."),
 new pixelguy(["Teslakid (Magnet Glove)", "magnet", "glove", "fist", "gauntlet"], ["game"], "Teslagrad", "ey boss hook me up with some o that good polarity shit"),
 new pixelguy(["Teslakid (Magnetic Cloak)", "cloak", "mantle", "magnet"], ["game"], "Teslagrad", "So cool, so cool. Had this thing for Halloween one year, set up with lights and all.")],
 
@@ -401,7 +401,7 @@ new pixelguy(["Kris? (dark world)", "dark", "battle"], ["game"], "* It's you!", 
 
 [new pixelguy(["Mediator"], ["???"], "???", "\"Ugh... I've gotta be real careful going back.\nAfter all that, it only took a prank to set them off?\nAt least I can rest here for a bit.\"", true)],
 [new pixelguy(["[i]", "i", "firegame", "isolation"], ["???"], "???", "\"Incredible... I can even travel to a place like this.\"", true)],
-[new pixelguy(["MARIBEL"], ["dream"], "Ghostly Field Club\nYUKARI", "...I just have to keep dreaming, and I can do it.")],
+[new pixelguy(["MARIBEL"], ["dream"], "Ghostly Field Club\nYUKARI", "\"...I just have to keep dreaming, and I can do it.\"")],
 
 
 
@@ -499,13 +499,17 @@ function step() {
 		secrets = true;
 		/*if (pos[1]<0) {
 			var bitches = Math.floor(pos[0]/10);
-			
+			console.log("unlockcheck: " + talkgets + "before");
 		} else {*/
 			var bitches = unlockstage;
 		//}
+		
 		if (talked[bitches] != 1) {
+			//console.log("unlockcheck: " + talkgets + "before");
 			talkgets++;
 			talked[bitches] = 1;
+			//console.log("unlockcheck: " + talkgets + "after");
+			
 		}
 		unlockcheck();
 		switch (bitches) {
@@ -645,7 +649,7 @@ function drawlayerpixels() {
 	
 	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
 	pixelzone.shadowBlur = 4;
-	if (pos[0] < 80 || pos[0] > 82 || !(pos[0] == 84 && pos[1] == 1)) {
+	if (pos[0] < 80 || pos[0] > 82 && !(pos[0] == 84 && pos[1] == 1)) {
 		pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
 		switch (pos[0]) {
 			case 94:
@@ -798,8 +802,11 @@ function drawlayerui() {
 	}
 	cursorapproach += (cursorpos-cursorapproach)*.2;
 	cursorapproach1 += (cursorpos1-cursorapproach1)*.2;
-	if (suzumi[pos[0]][pos[1]].special && pos[0] > 93) {
+	if (suzumi[pos[0]][pos[1]].special && pos[0] > 92) {
 		pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
+	}
+	if (suzumi[pos[0]][pos[1]].completed && pos[0] > 92) {
+		pixelzone.drawImage(diditoutline, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
 	}
 	pixelzone.drawImage(cursor, cursorapproach, cursorapproach1, 60, 60);
 	if (state) {
@@ -899,7 +906,7 @@ function guess() {
 	var yourguy;
 	var gotone = false;
 	var i;
-	console.log(myguy);
+	//console.log(myguy);
 	if (myguy == "save") {
 		save();
 		clearinput();
@@ -916,14 +923,14 @@ function guess() {
 	
 	for (i=0; i<suzumi[pos[0]][pos[1]].names.length; i++) {
 		yourguy = suzumi[pos[0]][pos[1]].names[i].toLowerCase();
-		console.log(yourguy);
+		//console.log(yourguy);
 		if (myguy.indexOf(yourguy) != -1) {
 			gotone = true;
 		}
 	}
     //if (suzumi[pos[0]][pos[1]].names.indexOf(input._value) != -1 && !suzumi[pos[0]][pos[1]].completed) {
 	if (gotone) {
-		console.log("yeah");
+		//console.log("yeah");
 		suzumi[pos[0]][pos[1]].completed = true;
 		yabusame[pos[0]][pos[1]] = true;
 		//console.log();
@@ -965,7 +972,7 @@ function clearinput() {
 
 function unlockcheck() {
 	var a = pixelgets;
-	console.log(a);
+	//console.log(a);
 	unlockstage = 0;
 	if (a >= 5) {unlockstage++}
 	if (a >= 10) {unlockstage++}
@@ -977,7 +984,7 @@ function unlockcheck() {
 	if (a >= 80) {unlockstage++}
 	if (a >= 100) {unlockstage++}
 	//unlockstage = a>=3 + a>=10 + a>=15 + a>=25 + a>=40 + a>=55 + a>=75 + a>=90 + a>=100;
-	console.log(unlockstage);
+	//console.log(unlockstage);
 	switch (pixelgets) {
 		case 5:
 			description = "Nice job! The next ten are unlocked.";
@@ -1025,7 +1032,7 @@ function unlockcheck() {
 		case 175:
 			Newgrounds.UnlockMedal(14);
 			break;
-		case 185-impossiblegets:
+		case 185+impossiblegets:
 			Newgrounds.UnlockMedal(15);
 			break;
 		case 200:
@@ -1037,19 +1044,21 @@ function unlockcheck() {
 			Newgrounds.UnlockMedal(2);
 			break;
 		case 5:
-			Newgrounds.UnlockMedal(3);
+			Newgrounds.UnlockMedal(4);
 			break;
 		case 10:
-			Newgrounds.UnlockMedal(4);
+			Newgrounds.UnlockMedal(3);
 			break;
 	}
 	if (suzumi[93][0].completed && suzumi[94][0].completed && suzumi[95][0].completed && suzumi[96][0].completed) {
 		Newgrounds.UnlockMedal(18);
 	}
+	//console.log("unlockcheck: " + talkgets);
+	//console.log(talked);
 	if (talkgets == 1) {
 		Newgrounds.UnlockMedal(17);
 	}
-	if (talkgets >= 10) {
+	if (talkgets == 10) {
 		Newgrounds.UnlockMedal(21);
 	}
 }
@@ -1090,11 +1099,12 @@ function save() {
 		yabusame[1][1] = false;*/
 		//var myDataString = localStorage.getItem("pixeldudes");
 		localStorage.setItem("pixeldudes", yabusame);
-		console.log(localStorage.getItem("pixeldudes"));
+		//console.log(localStorage.getItem("pixeldudes"));
 		//console.log(suzumi[i][j].completed);
 		//myDataString = localStorage.getItem("pixelgots");
 		localStorage.setItem("pixelgots", pixelgets);
 		localStorage.setItem("impossiblegots", impossiblegets);
+		//console.log("save: " + talkgets);
 		localStorage.setItem("talkgots", talkgets);
 		localStorage.setItem("talking", talked);
 		//console.log(pixelgets);
@@ -1109,42 +1119,56 @@ function load() {
 		//alert(localStorage.getItem("pixeldudes"));
 		yabusame = localStorage.getItem("pixeldudes");
 		var talkedd = localStorage.getItem("talking");
-		console.log(yabusame);
+		//console.log(yabusame);
 		//suzumi = yabusame;
 		for (var i=0; i<suzumi.length; i++) {
 			for (var j=0; j<suzumi[i].length; j++) {
 				var hoes = yabusame.substring(i*6+j*2, i*6+j*2+1);
-				console.log(hoes);
+				//console.log(hoes);
 				if (hoes == "1") {
-					console.log("hoes");
+					//console.log("hoes");
 					suzumi[i][j].completed = true;
 				} else {
-					console.log("no hoes");
+					//console.log("no hoes");
 					suzumi[i][j].completed = false;
 				}
 			}
 		}
-		for (var i=0; i<talkedd.length/10; i++) {
+		for (var i=0; i<talkedd.length; i++) {
 				var hoes = talkedd.substring(i*2, i*2+1);
-				console.log(hoes);
+				//console.log(hoes);
 				if (hoes == "1") {
-					console.log("hoes");
+					//console.log("hoes");
 					talked[i] = 1;
 				} else {
-					console.log("no hoes");
+					//console.log("no hoes");
 					talked[i] = 0;
 				}
 		}
 		//log()
 		//suzumi = localStorage.getItem("pixeldudes");
-		talked = talkedd;
-		talkgets = localStorage.getItem("talkgots");
+		//talked = talkedd;
+		talkgets = Number(localStorage.getItem("talkgots"));
 		impossiblegets = localStorage.getItem("impossiblegots");
 		pixelgets = localStorage.getItem("pixelgots");
+		//console.log("load: " + talkgets);
 		//pixelgets = 100;
 		//unlockcheck();
 		//pos[0] = 0;
 		//pos[1] = 0;
+		var yabusame = [
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+		[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false]
+		]; //i ate shit
 		description = "Loaded~";
 		unlockcheck();
 	}
