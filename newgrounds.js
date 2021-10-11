@@ -107,6 +107,7 @@ const Newgrounds =
 
     UnlockMedal(index)
     {
+        console.log(index);
         if (!enableNewgrounds || !this.medals || !this.medals[index]){
             return;
         }

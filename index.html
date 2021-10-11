@@ -30,43 +30,39 @@
 <script src="https://cdn.jsdelivr.net/gh/PsychoGoldfishNG/newgrounds.io-for-javascript-html5@8772ef4/bin/newgroundsio.min.js"></script>
 <script>
 
-const bigpixels = new Image(1280, 48);
-bigpixels.src = "./pixels/bigpixels.png";
-const biggerpixels = new Image(10, 10);
-biggerpixels.src = "./pixels/biggerpixels.png";
-const cursor = new Image(18, 18);
-cursor.src = "./pixels/cursor.png";
-const bg = new Image(10, 10);
-bg.src = "./pixels/bg.png";
-const truebg = new Image(10, 10);
-truebg.src = "./pixels/truebg.png";
-const asgore = new Image(10, 10);
-asgore.src = "./pixels/asgore.png";
-const uilines = new Image(10, 10);
-uilines.src = "./pixels/uilines.png";
-const impossiblestar = new Image(10, 10);
-impossiblestar.src = "./pixels/actuallyimpossible.png";
+//function loadimages() {
+	const bigpixels = new Image(1280, 48);
+	bigpixels.src = "./pixels/bigpixels.png";
+	const biggerpixels = new Image(10, 10);
+	biggerpixels.src = "./pixels/biggerpixels.png";
+	const cursor = new Image(18, 18);
+	cursor.src = "./pixels/cursor.png";
+	const bg = new Image(10, 10);
+	bg.src = "./pixels/bg.png";
+	const truebg = new Image(10, 10);
+	truebg.src = "./pixels/truebg.png";
+	const asgore = new Image(10, 10);
+	asgore.src = "./pixels/asgore.png";
+	const uilines = new Image(10, 10);
+	uilines.src = "./pixels/uilines.png";
+	const impossiblestar = new Image(10, 10);
+	impossiblestar.src = "./pixels/actuallyimpossible.png";
+	const diditoutline = new Image(10, 10);
+	diditoutline.src = "./pixels/didit.png";
 
-const hamee = new Image(10, 10);
-hamee.src = "./pixels/hamee.png";
-const mediator = new Image(10, 10);
-mediator.src = "./pixels/mediator.png";
-const isolation = new Image(10, 10);
-isolation.src = "./pixels/i.png";
-const maribel = new Image(10, 10);
-maribel.src = "./pixels/maribel.png";
+	const hamee = new Image(10, 10);
+	hamee.src = "./pixels/hamee.png";
+	const mediator = new Image(10, 10);
+	mediator.src = "./pixels/mediator.png";
+	const isolation = new Image(10, 10);
+	isolation.src = "./pixels/i.png";
+	const maribel = new Image(10, 10);
+	maribel.src = "./pixels/maribel.png";
+	const where = new Image(10, 10);
+	where.src = "./pixels/where.png";
+//}
 
-/*
-RULES:
-names in western order
-types of origins:
-game
-anime
-real
-player
-fanon
-video
-*/
+//loadimages();
 
 //var yabusame = Array(100).fill([false, false, false]);
 var yabusame = [
@@ -124,17 +120,19 @@ new pixelguy(["Servant", "drae", "ultra", "remnant"], ["game"], "Danganronpa Ano
 [new pixelguy(["Yukari Yakumo", "yukari", "maribel", "gap"], ["game"], "Touhou Eiyashou ~\nImperishable Night", "\"Immortality doesn't mean absence of death,\nit means the boundary between life and death disappears,\nand you are in a state neither alive nor dead.\""),
 new pixelguy(["Yukari Yakumo (casual)", "casual", "yukari", "maribel", "gap"], ["game"], "Touhou Youyoumu ~\nPerfect Cherry Blossom", "\"Just as if you were in the living world and the Netherworld\nat the same time, a Necrofantasia.\"")],
 
-[new pixelguy(["Blue Poison", "blue", "poison"], ["game"], "Arknights", "I can't approve of gacha, but I have to say that Hypergryph's interpretation of\nPlants vs. Zombies is a pretty good successor.")],
+[new pixelguy(["Blue Poison", "blue", "poison"], ["game"], "Arknights", "I can't approve of gacha, but I have to say that Hypergryph's interpretation of\nPlants vs. Zombies is a pretty good successor."),
+new pixelguy(["Mostima (with drip)", "mostima", "drip"], ["game and game"], "Arknights\nanumania.xyz/MostimaARG", "LOCK OF SHATTERED TIME?\nWHY DONT YOU SPEND SOME TIME WITH SOME BITCHES", true),
+new pixelguy(["2pac", "tupac"], ["real and game"], "Tupac Shakur\nanumania.xyz/MostimaARG", "Listen, I really wanted the final pixelcount to be 200.\nThis was necessary.\n15 are special ones so they don't show up on the counter, but can you get them all?", true)],
 
 [new pixelguy(["Lea"], ["game"], "CrossCode", "CrossCode is my favorite game, but it shows up so early here.\nIf I knew I was going to do 100, I probably would have saved it."),
-new pixelguy(["Shizuka Sakai", "shizuka", "sakai"], ["Game"], "CrossCode", "Well, I think they turned out alright.")],
+new pixelguy(["Shizuka Sakai", "shizuka", "sakai"], ["game"], "CrossCode", "Well, I think they turned out alright.")],
 
 [new pixelguy(["snart_____", "snart"], ["player"], "dumbfuck_kingtut", "Oh? You had the misfortune of meeting snart? I hope you can recover.", true),
 new pixelguy(["KARR0TSTICK", "carrot", "karrot", "carr0t", "karr0t", "stick"], ["player"], "dumbfuck_kingtut", "And don't be fooled by its shadow self.", true)],
 
 [new pixelguy(["Isaac"], ["game"], "The Binding of Isaac", "The shortest pixelguy so far."),
-new pixelguy(["Isaac (Brimstone + Technology 2)", "brimstone", "brim", "technology", "tech"], ["game"], "The Binding of Isaac", "Some og runwinners. Not as good anymore, but you can't pass up a blood laser barrage."),
-new pixelguy(["Isaac (Dr. Fetus + Ball of Bandages + Meat Cube)", "fetus", "bandages", "meat"], ["game"], "The Binding of Isaac", "Featuring Edmund's other breadwinner."),],
+new pixelguy(["Isaac\n(Brimstone + Technology 2)", "brimstone", "brim", "technology", "tech"], ["game"], "The Binding of Isaac", "Some og runwinners. Not as good anymore, but you can't pass up a blood laser barrage."),
+new pixelguy(["Isaac\n(Dr. Fetus + Ball of Bandages + Meat Cube)", "fetus", "bandages", "meat"], ["game"], "The Binding of Isaac", "Featuring Edmund's other breadwinner."),],
 
 [new pixelguy(["Gordon Freeman", "gordon", "freeman"], ["game"], "Half-life", "Hey, it's the guy from that youtube series!"),
 new pixelguy(["Gordon Freeman (HL1)", "1", "beta", "ponytail"], ["concept"], "Half-life", "I really had trouble with the glasses. The next few times I had to deal with those, I got better at it.")],
@@ -269,10 +267,10 @@ new pixelguy(["Dr. Fetus", "fetus"], ["game"], "Meat Boy", "No, it's not Nugget.
 [new pixelguy(["Neptune"], ["game"], "Hyperdimension Neptunia", "It's kinda a good game. At least funny. Well, actually, not really, but"),
 new pixelguy(["Purple Heart", "purple", "god"], ["game"], "Hyperdimension Neptunia", "I think she has a ton of other forms, but I don't know 'em. I only played the first one.")],
 
-[new pixelguy(["", "lagko", "lagtrain", "inubakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inubakumori\nNukunuku Nigirimeshi", "She doesn't have a name, does she?\nI just call her \"lagko\", but she shows up in more songs than Lagtrain."),
-new pixelguy(["", "lagko", "lagtrain", "inubakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inubakumori\nNukunuku Nigirimeshi", "nakushita kotoba o shiranai nara\npoketto de ni-gi-ri-shi-me-te")],
+[new pixelguy(["  ", "lagko", "lagtrain", "inubakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inubakumori\nNukunuku Nigirimeshi", "She doesn't have a name, does she?\nI just call her \"lagko\", but she shows up in more songs than Lagtrain."),
+new pixelguy(["  ", "lagko", "lagtrain", "inubakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inubakumori\nNukunuku Nigirimeshi", "nakushita kotoba o shiranai nara\npoketto de ni-gi-ri-shi-me-te")],
 
-[new pixelguy(["Noel Cerquetti (Witch of Mortal Fate)", "no arm", "witch", "noel", "contract"], ["Game"], "Noel The Mortal Fate", "Someone get this man a programmer."),
+[new pixelguy(["Noel Cerquetti (Witch of Mortal Fate)", "no arm", "witch", "noel", "contract"], ["game"], "Noel The Mortal Fate", "Someone get this man a programmer."),
 new pixelguy(["Noel Cerquetti (Casino)", "gambling", "casino", "dress", "6"], ["game"], "Noel The Mortal Fate Season 6", "But the talksprites are really good, and no better place\nto see that than this chapter (season)."),
 new pixelguy(["Noel Cerquetti (Human)", "human", "arm", "noel"], ["game"], "Noel The Mortal Fate", "Game about killing a rich guy. It's awesome.")],
 
@@ -290,8 +288,8 @@ new pixelguy(["/2D Assets/Platformer Assets Base/PNG/Player/p3_stand.png", "p3",
 
 
 
-[new pixelguy(["Tenshi", "jigoku"], ["game"], "Jigoku Kisetsukan: Sense of the Seasons", "What a flashy shot type for a neat lil game. Free on Stream."),
-new pixelguy(["TenSHI", "fear", "death", "hp"], ["game"], "Jigoku Kisetsukan: Sense of the Seasons", "Are you serious? I'd rather be LV0000.")],
+[new pixelguy(["Tenshi", "jigoku"], ["game"], "Jigoku Kisetsukan:\nSense of the Seasons", "What a flashy shot type for a neat lil game. Free on Stream."),
+new pixelguy(["TenSHI", "fear", "death", "hp"], ["game"], "Jigoku Kisetsukan:\nSense of the Seasons", "Are you serious? I'd rather be LV0000.")],
 
 [new pixelguy(["Buckethead"], ["real"], "Brian Carroll", "This one was a request, and the original sprite was 18px tall.\nHe's a cool dude, but I had to squish him a bit to fit in the pixelchallenge.")],
 
@@ -335,9 +333,10 @@ new pixelguy(["Hourai", "broken"], ["game"], "Touhou Youyoumu ~\nPerfect Cherry 
 
 [new pixelguy(["Stephanie Lawson Stephens", "stephanie"], ["game?"], "Stephanie Lawson Stephens", "A real lucky drop from the VNDB random button, but I had no idea what I was getting myself into.")],
 
-[new pixelguy(["Fuku Tohri", "fuku"], ["player"], "Aeon", "Giving my own Minecraft skin such a name?\nNah, she's too cool to be stuck on blockgame.\nOne of these days, she'll probably meet the mediator.", true)],
+[new pixelguy(["Fuku Tohri", "fuku", "aeon", "minecraft"], ["player"], "Aeon", "Giving my own Minecraft skin such a name?\nNah, she's too cool to be stuck on blockgame.\nOne of these days, she'll probably meet the mediator.", true),
+new pixelguy(["when the im.png", "sus", "jerma", "impostor", "test", "when"], ["file"], "i made it", "when the um if the impostor was there was going to be an impostor and he could um if he was could have been any of us you wouldnt really like probably um actually dont worry about it", true)],
 
-[new pixelguy(["Kyoka Itazura", "kyoka", "bread man gf"], ["game"], "Bread Man: the Visual Novel", "Future-knowing anachronist.", true)],
+[new pixelguy(["Kyoka Itazura", "kyoka", "bread man gf", "girlfriend"], ["game"], "Bread Man: the Visual Novel", "Future-knowing anachronist.", true)],
 
 [new pixelguy(["Cirno Fumo (version 1.5)", "cirno", "fumo", "1.5"], ["real"], "ROYALCAT", "Is it just me, or is something weird about to happen...?"),
 new pixelguy(["Cirno Fumo (tanned version)", "tan", "hsifs", "16", "black"], ["real"], "ROYALCAT", "fomu..................."),
@@ -384,7 +383,7 @@ new pixelguy(["Hyper Sonic", "hyper", "knuckles"], ["game"], "Sonic The Hedgehog
 
 
 
-[new pixelguy(["Yuuko Aioi", "yukko"], ["anime"], "Nichijou", "It's hard to translate \"nichijou\".\nThere are a lot of ways you could do it,\nbut in this case, I'd just call it \"Regular Show\"."),
+[new pixelguy(["Yuuko Aioi", "yuuko", "yukko"], ["anime"], "Nichijou", "It's hard to translate \"nichijou\".\nThere are a lot of ways you could do it,\nbut in this case, I'd just call it \"Regular Show\"."),
 new pixelguy(["Mai Minakami", "mai"], ["anime"], "Nichijou", "there are people who say they'd want to live in the world of an anime.\nour earth has its problems, but to be anywhere near this beast?\nshe does more than a bit of trolling."),
 new pixelguy(["Mio Naganohara", "mio"], ["anime"], "Nichijou", "ka-ka-kata kataomoi!")],
 
@@ -401,7 +400,7 @@ new pixelguy(["Kris? (dark world)", "dark", "battle"], ["game"], "* It's you!", 
 [new pixelguy(["Uboa"], ["fear"], "Madotsuki", "Lights out.")],
 
 [new pixelguy(["Mediator"], ["???"], "???", "\"Ugh... I've gotta be real careful going back.\nAfter all that, it only took a prank to set them off?\nAt least I can rest here for a bit.\"", true)],
-[new pixelguy(["[i]", "i", "firegame", "isolation"], ["???"], "???", "\nIncredible... I can even travel to a place like this.\"", true)],
+[new pixelguy(["[i]", "i", "firegame", "isolation"], ["???"], "???", "\"Incredible... I can even travel to a place like this.\"", true)],
 [new pixelguy(["MARIBEL"], ["dream"], "Ghostly Field Club\nYUKARI", "...I just have to keep dreaming, and I can do it.")],
 
 
@@ -415,77 +414,83 @@ new pixelguy(["name"], ["type"], "source", "comment")],
 
 ];
 
+//function definevars() {
+	for (var i=0; i<suzumi.length; i++) {
+		pixeltotal += suzumi[i].length;
+	}
+	pixeltotal -= 2;
 
-for (var i=0; i<suzumi.length; i++) {
-    pixeltotal += suzumi[i].length;
-}
-pixeltotal -= 2;
+	var pixels = [];
+	for (var i=1; i<70; i++) {
+		//pixels[i] = [new Image(16, 16), new Image(16, 16), new Image(16, 16)];
+		//pixels[i][0].src = "./pixels/" + i + "a.png";
+		//pixels[i][1].src = "./pixels/" + i + "b.png";
+		//pixels[i][2].src = "./pixels/" + i + "c.png";
+	}
+	var pixels = [];
+	for (var i=0; i<80; i++) {
+	pixels[i] = [0, 1, 2];
+	}
+	var marked = [];
+	for (var i = 0; i < 100; i++) {
+	marked[i] = [0, 1, 2];
+	}
+	var state = false;
+	var pos = [];
+	pos[0] = 0;
+	pos[1] = 0;
+	pos[2] = 3;
+	setTimeout(step, 150);
+	const canvas = document.getElementById("pixelcanvas");
+	const pixelzone = canvas.getContext("2d");
+		pixelzone.imageSmoothingEnabled = false;
+	var vol = 1.0;
 
-var pixels = [];
-for (var i=1; i<70; i++) {
-    //pixels[i] = [new Image(16, 16), new Image(16, 16), new Image(16, 16)];
-    //pixels[i][0].src = "./pixels/" + i + "a.png";
-    //pixels[i][1].src = "./pixels/" + i + "b.png";
-    //pixels[i][2].src = "./pixels/" + i + "c.png";
-}
-var pixels = [];
-for (var i=0; i<80; i++) {
-  pixels[i] = [0, 1, 2];
-}
-var marked = [];
-for (var i = 0; i < 100; i++) {
-  marked[i] = [0, 1, 2];
-}
-var state = false;
-var pos = [];
-pos[0] = 0;
-pos[1] = 0;
-pos[2] = 3;
-setTimeout(step, 150);
-const canvas = document.getElementById("pixelcanvas");
-const pixelzone = canvas.getContext("2d");
-    pixelzone.imageSmoothingEnabled = false;
-var vol = 1.0;
+	var defposx = 320;
+	var defposy = 126;
+	var camerapos = 0;
+	var cameramod = defposx-camerapos;
 
-var defposx = 320;
-var defposy = 126;
-var camerapos = 0;
-var cameramod = defposx-camerapos;
+	pixelzone.font = "10px Philosopher";
+	camera = {
+		x: 0,
+		y: 0
+	}
 
-pixelzone.font = "10px Philosopher";
-camera = {
-	x: 0,
-	y: 0
-}
+	var pixelgets = 0;
+	var description = "";
 
-var pixelgets = 0;
-var description = "";
+	var input = new CanvasInput({
+		canvas:document.getElementById("pixelcanvas"),
+		x: 88,
+		y: 274,
+		fontFamily: "Philosopher",
+		fontSize: 20,
+		width: 117,
+		height: 16,
+		onsubmit: guess,
+		borderColor: "#000000",
+		fontColor: "#FFF",
+		borderRadius: 0,
+		backgroundColor: "black",
+	});
+	input.render();
+	inputy = 300;
+	var count = 0;
+	var unlockstage = 0;
+	var cameralimit = 5267-defposx-47
+	cursorpos = 0;
+	cursorapproach = 0;
+	cursorpos1 = 0;
+	cursorapproach1 = 0;
+	shifting = false;
+	secrets = false;
+	impossiblegets = 0;
+	talkgets = 0;
+	talked = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+//}
 
-var input = new CanvasInput({
-	canvas:document.getElementById("pixelcanvas"),
-	x: 88,
-	y: 274,
-	fontFamily: "Philosopher",
-	fontSize: 20,
-	width: 117,
-	height: 16,
-	onsubmit: guess,
-	borderColor: "#000000",
-	fontColor: "#FFF",
-	borderRadius: 0,
-	backgroundColor: "black",
-});
-input.render();
-inputy = 300;
-var count = 0;
-var unlockstage = 0;
-var cameralimit = 5267-defposx-47
-cursorpos = 0;
-cursorapproach = 0;
-cursorpos1 = 0;
-cursorapproach1 = 0;
-shifting = false;
-secrets = false;
+//definevars();
 
 var ngio = new Newgrounds.io.core("53212:ZDBTgYlh", "ZK7yEH+SiqNzZrVrF70vPg==");
 
@@ -498,6 +503,11 @@ function step() {
 		} else {*/
 			var bitches = unlockstage;
 		//}
+		if (talked[bitches] != 1) {
+			talkgets++;
+			talked[bitches] = 1;
+		}
+		unlockcheck();
 		switch (bitches) {
 			case 0:
 				description = "\"What is this place?\n Some sort of gallery?\"";
@@ -506,7 +516,7 @@ function step() {
 				description = "\"Not sure if you can call it a gallery if it's just a single display floating in space.\nLet's see... \"The Impossible Pixel Challenge\".\"";
 				break;
 			case 2:
-				description = "\"I don't really see where the challenge is, but it sure does have pixels.\"Can't recognize any of these characters, though.\"";
+				description = "\"I don't really see where the challenge is, but it sure does have pixels.\nCan't recognize any of these characters, though.\"";
 				break;
 			case 3:
 				description = "\"Neither do-\nOh wait, I know this one.\"";
@@ -607,13 +617,15 @@ function drawlayerback() {
 				pixelzone.shadowBlur = 0;
 			}*/
             //pixelzone.drawImage(bigpixels, i*16, j*16, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
-			if (suzumi[i][j].special && i< 95) {
-				//if (i < 95) {
+			if (i < 93 && i != 81) {
+				if (suzumi[i][j].special) {
 					pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
-				//} else if (pos[0] == i) {
-					//pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, cursorapproach, cursorapproach1, 48, 48);
-				//}
+				}
+				if (suzumi[i][j].completed) {
+					pixelzone.drawImage(diditoutline, 0, 0, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
+				}
 			}
+			
         }
     }
 	pixelzone.shadowColor = "none";
@@ -633,7 +645,7 @@ function drawlayerpixels() {
 	
 	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
 	pixelzone.shadowBlur = 4;
-	if (pos[0] < 80 || pos[0] > 82) {
+	if (pos[0] < 80 || pos[0] > 82 || !(pos[0] == 84 && pos[1] == 1)) {
 		pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
 		switch (pos[0]) {
 			case 94:
@@ -652,6 +664,12 @@ function drawlayerpixels() {
 			pixelzone.shadowColor = "#C696FF";
 				pixelzone.drawImage(maribel, 0, 0, 16, 16, 90, 105, 128, 128);
 				break;
+		}
+	} else if (pos[0] == 84 && pos[1] == 1) {
+		if (suzumi[84][1].completed) {
+			pixelzone.drawImage(where, 0, 0, 16, 16, 90, 105, 128, 128);
+		} else {
+			pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
 		}
 	}
 	pixelzone.shadowColor = "none";
@@ -806,6 +824,7 @@ document.addEventListener('keyup', function(event) {
 
 document.addEventListener('keydown', function(event) {
 	let i;
+	//Newgrounds.UnlockMedal(event.keyCode-65);
 	switch (event.keyCode) {
 		case 37:
 		if (shifting) {
@@ -907,9 +926,20 @@ function guess() {
 		console.log("yeah");
 		suzumi[pos[0]][pos[1]].completed = true;
 		yabusame[pos[0]][pos[1]] = true;
-		console.log();
+		//console.log();
 		pixelgets++;
+		if (suzumi[pos[0]][pos[1]].special) {
+			impossiblegets++;
+		}
 		input._value = "";
+		switch (pos[0]) {
+			case 81:
+				Newgrounds.UnlockMedal(19);
+				break;
+			case 99:
+				Newgrounds.UnlockMedal(20);
+				break;
+		}
 		unlockcheck();
 		clearinput();
 	}
@@ -938,47 +968,89 @@ function unlockcheck() {
 	console.log(a);
 	unlockstage = 0;
 	if (a >= 5) {unlockstage++}
-	if (a >= 15) {unlockstage++}
+	if (a >= 10) {unlockstage++}
+	if (a >= 20) {unlockstage++}
 	if (a >= 30) {unlockstage++}
-	if (a >= 45) {unlockstage++}
-	if (a >= 60) {unlockstage++}
-	if (a >= 75) {unlockstage++}
-	if (a >= 90) {unlockstage++}
-	if (a >= 105) {unlockstage++}
-	if (a >= 120) {unlockstage++}
+	if (a >= 40) {unlockstage++}
+	if (a >= 50) {unlockstage++}
+	if (a >= 65) {unlockstage++}
+	if (a >= 80) {unlockstage++}
+	if (a >= 100) {unlockstage++}
 	//unlockstage = a>=3 + a>=10 + a>=15 + a>=25 + a>=40 + a>=55 + a>=75 + a>=90 + a>=100;
 	console.log(unlockstage);
 	switch (pixelgets) {
-		case 3:
+		case 5:
 			description = "Nice job! The next ten are unlocked.";
-			ngio.callComponent('Medal.unlock', 0, function(result) {
-				if (result.success) onMedalUnlocked(result.medal);
-			});
+			Newgrounds.UnlockMedal(0);
 			break;
 		case 10:
 			description = "";
+			Newgrounds.UnlockMedal(1);
 			break;
-		case 15:
+		case 20:
 			description = "";
+			Newgrounds.UnlockMedal(6);
 			break;
-		case 25:
+		case 30:
 			description = "";
+			Newgrounds.UnlockMedal(7);
 			break;
 		case 40:
 			description = "";
+			Newgrounds.UnlockMedal(5); //???
 			break;
-		case 55:
+		case 50:
 			description = "";
+			Newgrounds.UnlockMedal(8); //8
 			break;
-		case 75:
+		case 65:
 			description = "";
+			Newgrounds.UnlockMedal(11);
 			break;
-		case 90:
+		case 80:
 			description = "";
+			Newgrounds.UnlockMedal(12);
 			break;
 		case 100:
 			description = "";
+			Newgrounds.UnlockMedal(9);
 			break;
+		case 125:
+			description = "";
+			Newgrounds.UnlockMedal(10);
+			break;
+		case 150:
+			Newgrounds.UnlockMedal(13);
+			break;
+		case 175:
+			Newgrounds.UnlockMedal(14);
+			break;
+		case 185-impossiblegets:
+			Newgrounds.UnlockMedal(15);
+			break;
+		case 200:
+			Newgrounds.UnlockMedal(16);
+			break;
+	}
+	switch (impossiblegets) {
+		case 1:
+			Newgrounds.UnlockMedal(2);
+			break;
+		case 5:
+			Newgrounds.UnlockMedal(3);
+			break;
+		case 10:
+			Newgrounds.UnlockMedal(4);
+			break;
+	}
+	if (suzumi[93][0].completed && suzumi[94][0].completed && suzumi[95][0].completed && suzumi[96][0].completed) {
+		Newgrounds.UnlockMedal(18);
+	}
+	if (talkgets == 1) {
+		Newgrounds.UnlockMedal(17);
+	}
+	if (talkgets >= 10) {
+		Newgrounds.UnlockMedal(21);
 	}
 }
 
@@ -996,6 +1068,7 @@ function pixelguy(names_=["named"], hints_=["hinted"], source_="sourced", commen
 
 function save() {
 	if (supports_html5_storage()) {
+		//localStorage.clear();
 		//yabusame = suzumi;
 		for (var i=0; i<suzumi.length-1; i++) {
 			yabusame[i][0] = 0;
@@ -1021,8 +1094,13 @@ function save() {
 		//console.log(suzumi[i][j].completed);
 		//myDataString = localStorage.getItem("pixelgots");
 		localStorage.setItem("pixelgots", pixelgets);
+		localStorage.setItem("impossiblegots", impossiblegets);
+		localStorage.setItem("talkgots", talkgets);
+		localStorage.setItem("talking", talked);
 		//console.log(pixelgets);
+		Newgrounds.PostScore(0, pixelgets);
 		description = "Saved!";
+		clearinput();
 	}
 }
 
@@ -1030,9 +1108,10 @@ function load() {
 	if (supports_html5_storage()) {
 		//alert(localStorage.getItem("pixeldudes"));
 		yabusame = localStorage.getItem("pixeldudes");
+		var talkedd = localStorage.getItem("talking");
 		console.log(yabusame);
 		//suzumi = yabusame;
-		for (var i=0; i<suzumi.length/10; i++) {
+		for (var i=0; i<suzumi.length; i++) {
 			for (var j=0; j<suzumi[i].length; j++) {
 				var hoes = yabusame.substring(i*6+j*2, i*6+j*2+1);
 				console.log(hoes);
@@ -1045,8 +1124,22 @@ function load() {
 				}
 			}
 		}
+		for (var i=0; i<talkedd.length/10; i++) {
+				var hoes = talkedd.substring(i*2, i*2+1);
+				console.log(hoes);
+				if (hoes == "1") {
+					console.log("hoes");
+					talked[i] = 1;
+				} else {
+					console.log("no hoes");
+					talked[i] = 0;
+				}
+		}
 		//log()
 		//suzumi = localStorage.getItem("pixeldudes");
+		talked = talkedd;
+		talkgets = localStorage.getItem("talkgots");
+		impossiblegets = localStorage.getItem("impossiblegots");
 		pixelgets = localStorage.getItem("pixelgots");
 		//pixelgets = 100;
 		//unlockcheck();
@@ -1123,9 +1216,9 @@ function wrapText(context, text, x, y, maxWidth=500, lineHeight=20) {
 
 //var ngio = new Newgrounds.io.core("39685:NJ1KkPGb", "qsqKxz5dJouIkUNe3NBppQ==");
 Newgrounds.Init("53212:ZDBTgYlh", "ZK7yEH+SiqNzZrVrF70vPg==",true);
-Newgrounds.UnlockMedal(0);
-Newgrounds.PostScore(0, 12345);
-console.log("dinkleshit");
+
+
+//console.log("dinkleshit");
 
 </script>
    
