@@ -365,9 +365,9 @@ new pixelguy(["Pink"], ["game"], "Everhood", "There are no Absolute Truths.")],
 new pixelguy(["Susie (dark world)", "dark", "1"], ["game"], "DELTARUNE", "* KRIS! WHERE THE FUCK ARE WE?????"),
 new pixelguy(["Susie (friendly)", "friend", "eye", "2"], ["game"], "DELTARUNE", "* Wait, Kris? ...Where'd they go?\n* Oh, they're just further up.")],
 
-[new pixelguy(["Urotsuki", "2kki", "twokki"], ["game"], "source", "yume tabisuru shoujo"),
-new pixelguy(["Urotsuki (phone)", "phone"], ["dream"], "source", "* You have reached the Hotline for Idiot Babies."),
-new pixelguy(["Urotsuki (penguin)", "penguin"], ["dream"], "source", "squeak squeak squeak squeak")],
+[new pixelguy(["Urotsuki", "2kki", "twokki"], ["game"], "Yume 2kki", "yume tabisuru shoujo"),
+new pixelguy(["Urotsuki (phone)", "phone"], ["dream"], "Yume 2kki", "* You have reached the Hotline for Idiot Babies."),
+new pixelguy(["Urotsuki (penguin)", "penguin"], ["dream"], "Yume 2kki", "squeak squeak squeak squeak")],
 
 [new pixelguy(["Juno"], ["game concept"], "Project Terra", "With different weapons? Real 3D? Sign me up for another seven years."),
 new pixelguy(["Juno (less hair)", "hair", "tail", "post"], ["game concept"], "Project Terra", "There's a lot going on with her so it was hard to fit,\nbut I just barely did it.")],
@@ -621,7 +621,7 @@ function drawlayerback() {
 				pixelzone.shadowBlur = 0;
 			}*/
             //pixelzone.drawImage(bigpixels, i*16, j*16, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
-			if (i < 93 && i != 81) {
+			if (i < 93 && i != 81 && Math.abs((camerapos/48)-i) < 10) { //might work
 				if (suzumi[i][j].special) {
 					pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
 				}
