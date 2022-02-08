@@ -9,7 +9,7 @@ pixelking - 80
 pixelchallenger - 100
 pixelchaser - 125
 There's more... - 150
-pixel
+pixeltheorist - 175
 pixelscientist - 200
 pixelformer - 225
 pixeltraveler - 240
