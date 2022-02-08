@@ -37,6 +37,8 @@
 	biggerpixels.src = "./pixels/biggerpixels.png";
 	const cursor = new Image(18, 18);
 	cursor.src = "./pixels/cursor.png";
+	const cursor2 = new Image(18, 18);
+	cursor2.src = "./pixels/cursor2.png";
 	const bg = new Image(10, 10);
 	bg.src = "./pixels/bg.png";
 	const truebg = new Image(10, 10);
@@ -47,8 +49,12 @@
 	uilines.src = "./pixels/uilines.png";
 	const impossiblestar = new Image(10, 10);
 	impossiblestar.src = "./pixels/actuallyimpossible.png";
+	const impossiblestar2 = new Image(10, 10);
+	impossiblestar2.src = "./pixels/actuallyimpossible2.png";
 	const diditoutline = new Image(10, 10);
 	diditoutline.src = "./pixels/didit.png";
+	const diditoutline2 = new Image(10, 10);
+	diditoutline2.src = "./pixels/diditwo.png";
 
 	const hamee = new Image(10, 10);
 	hamee.src = "./pixels/hamee.png";
@@ -68,6 +74,24 @@
 
 	const unknown = new Image(10, 10);
 	unknown.src = "./pixels/unknown.png";
+
+	const spamarm = new Image(10, 10);
+	spamarm.src = "./pixels/spamarm.png";
+	const spambody = new Image(10, 10);
+	spambody.src = "./pixels/spambody.png";
+	const spamleg = new Image(10, 10);
+	spamleg.src = "./pixels/spamleg.png";
+	const spamarmor = new Image(10, 10);
+	spamarmor.src = "./pixels/spamarmor.png";
+	const spamwing = new Image(10, 10);
+	spamwing.src = "./pixels/spamwing.png";
+	const spamface1 = new Image(10, 10);
+	spamface1.src = "./pixels/spamface1.png";
+	const spamface2 = new Image(10, 10);
+	spamface2.src = "./pixels/spamface2.png";
+	const spamface3 = new Image(10, 10);
+	spamface3.src = "./pixels/spamface3.png";
+
 //}
 
 //loadimages();
@@ -200,7 +224,7 @@ new pixelguy(["Among Drip", "drip"], ["fanon"], "Artifact Studios", "I use this 
 
 [new pixelguy(["Chara", "human", "player", "determination"], ["game"], "UNDERTALE", "* Determination."),
 new pixelguy(["Core!Frisk", "void", "core", "xtale", "underverse"], ["fanon"], "Underverse", "I haven't actually watched it. I just think they look cool."),
-new pixelguy(["Zhtton"], ["game"], "JoyTale", "", 3)],
+new pixelguy(["Zhtton"], ["game"], "JoyTale", "can you believe what we have to do while waiting for pointless?\ndamn it..,.,.,,.it's really funny though", 3)],
 
 [new pixelguy(["Nagito Komaeda", "nagito", "komaeda", "kanye"], ["game"], "Super Danganronpa 2:\nGoodbye Despair", "fingers in his ass, fingers in his ass..."),
 new pixelguy(["Nagito Komaeda (student)", "3", "student"], ["anime"], "Danganronpa 3:\nKilling Harmony", "This guy is special because he had a perfect stage and audience to\nflaunt his extreme ideals and devicive methods."),
@@ -320,7 +344,7 @@ new pixelguy(["L.A.M.A.⅃", "l.a.m.a.j", "lamaj", "l.a.m.a.l", "lamal"], ["misc
 new pixelguy(["ƎЯIOIOIRE", "erioioire"], ["misc."], "SiIvagunner", "didn't they just play that winnie the pooh flash for like four hours while debating that? never change, siiva.\nahhh, i should have done some kfad for the pixelchallenge.")],
 
 [new pixelguy(["Boshy"], ["\"game\""], "I Wanna Be The Boshy", "lol u died"),
-new pixelguy(["Ash"], ["game"], "The End Is Nigh", "", 2)],
+new pixelguy(["Ash"], ["game"], "The End Is Nigh", "...Sorry.\nWhen I said I was getting Dead God, I meant the other one.", 2)],
 
 [new pixelguy(["George Gus", "george", "gus"], ["misc."], "Anime Character Generator", "We really just put everything we could on one monster. It barely fit in 16x16.", true),
 new pixelguy(["Amon Gus", "amon", "gus"], ["misc."], "Anime Character Generator", "Amen.", true)],
@@ -337,7 +361,7 @@ new pixelguy(["Little Mac (jacket)", "hoodie", "jacket", "alt", "skin", "color",
 new pixelguy(["Little Mac (wireframe)", "wireframe", "alt", "skin", "color", "colour", "arcade"], ["game"], "Punch Out!! (arcade)", "By the way, I main Little Mac (and Robin).\nFor real and seriously I just like the way he moves.")],
 
 [new pixelguy(["Reimu (PC98)", "reimu", "98"], ["game"], "Touhou 1", "She's a bit tall, isn't she? The miko outfit is too cool to be wasted, though."),
-new pixelguy(["Satobi Hakurei"], ["satobi"], "YUKARI", "")],
+new pixelguy(["SATOBI HAKUREI", "satobi"], ["game"], "YUKARI", "This is pretty old, even though it's part of the DLC.\nThe Reimu above was based off of this, and I just now decided to include it.")],
 
 [new pixelguy(["Akari Mizunashi (summer)", "akari", "summer"], ["anime"], "Aria", "That unending sea..."),
 new pixelguy(["Akari Mizunashi (winter)", "winter"], ["anime"], "Aria", "That azure sky...")],
@@ -438,7 +462,7 @@ new pixelguy(["Stephanie Lazarus Stephens", "lazarus"], ["game?"], "Stephanie La
 new pixelguy(["when the im.png", "sus", "jerma", "impostor", "test", "when"], ["file"], "i made it", "when the um if the impostor was there was going to be an impostor and he could um if he was could have been any of us you wouldnt really like probably um actually dont worry about it", true),],
 
 [new pixelguy(["Kyoka Itazura", "kyoka", "bread man gf", "girlfriend"], ["game"], "Bread Man: the Visual Novel", "Future-knowing anachronist.", true),
-new pixelguy(["s_mistake", "mistake"], ["file"], "i made it", "", 3)],
+new pixelguy(["s_mistake", "mistake"], ["file"], "i made it", "ERROR in action number one of Draw Event for object o_roommanager: Variable Index [2385897] out of range [1]", 3)],
 
 [new pixelguy(["Cirno Fumo (version 1.5)", "cirno", "fumo", "1.5"], ["real"], "ROYALCAT", "Is it just me, or is something weird about to happen...?"),
 new pixelguy(["Cirno Fumo (tanned version)", "tan", "hsifs", "16", "black"], ["real"], "ROYALCAT", "fomu..................."),
@@ -473,7 +497,7 @@ new pixelguy(["Susie (friendly)", "friend", "eye", "2"], ["game"], "DELTARUNE", 
 new pixelguy(["Urotsuki (phone)", "phone"], ["dream"], "Yume 2kki", "* You have reached the Hotline for Idiot Babies."),
 new pixelguy(["Urotsuki (penguin)", "penguin"], ["dream"], "Yume 2kki", "squeak squeak squeak squeak")],
 
-[new pixelguy(["Juno o' Lira"], ["game concept"], "Project Terra", "With different weapons? Real 3D? Sign me up for another seven years."),
+[new pixelguy(["Juno o' Lira", "juno"], ["game concept"], "Project Terra", "With different weapons? Real 3D? Sign me up for another seven years."),
 new pixelguy(["Juno (less hair)", "hair", "tail", "post"], ["game concept"], "Project Terra", "There's a lot going on with her so it was hard to fit,\nbut I just barely did it.")],
 
 [new pixelguy(["girl", "milk", "inside"], ["game"], "Milk inside a bag of milk\ninside a bag of milk", "O"),
@@ -544,7 +568,7 @@ var vol = 1.0;
 
 var defposx = 320;
 var defposy = 126;
-var camerapos = 0;
+var camerapos = 693;
 var cameramod = defposx-camerapos;
 
 pixelzone.font = "10px Philosopher";
@@ -574,7 +598,7 @@ input.render();
 inputy = 300;
 var count = 0;
 var unlockstage = 0;
-var cameralimit = 5267-defposx-47
+var cameralimit = 6824-defposx-47
 cursorpos = 0;
 cursorapproach = 0;
 cursorpos1 = 0;
@@ -588,6 +612,9 @@ talked = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var ngio = new Newgrounds.io.core("53212:ZDBTgYlh", "ZK7yEH+SiqNzZrVrF70vPg==");
 
 function step() {
+
+	
+	//console.log(pos[0]-dlcount, 9+unlockstage*10);
 	if (pos[0]-dlcount > 9+unlockstage*10 || secrets /*|| pos[1]<0*/) {
 		secrets = true;
 		var bitches = unlockstage;
@@ -599,6 +626,7 @@ function step() {
 		unlockcheck();
 		switch (bitches) {
 			case 0:
+				//console.log("AMONG US IN REAL LIFE !!");
 				description = "\"What is this place?\n Some sort of gallery?\"";
 				break;
 			case 1:
@@ -630,9 +658,10 @@ function step() {
 				break;
 			
 		}
-	} else if (pos[0]-dlcount < 0) {
+	} else if (pos[0]-dlcount < 0 && pixelgets < 150) {
 		description = "Type \"save\" at any time to save, and \"load\" at any time to load.\nGet a certain amount of them correct, and unlock the next ten!\nPixels with stars are actually almost impossible, so don't worry about them much.";
-	} else {
+	} else if (pos[0]-dlcount < -22) {
+		description = "That's all, folks!";
 	}
 	if (pixelgets >= 150) {
 		pos[0] = clamp(pos[0], 0, 9+unlockstage*10+dlcount);
@@ -642,8 +671,8 @@ function step() {
 	pos[1] = clamp(pos[1], 0, suzumi[pos[0]].length-1);
 	
 	if (pos[0]-dlcount <= 92 && (pos[0]-dlcount <= 79 || pos[0]-dlcount >= 83) && pos[0]-dlcount >= 0) {
-		cameralimit = 5200-defposx-47+(unlockstage-10)*480-48-48+dlcount*48;
-		cameralimit = clamp(cameralimit, 1056, 6300-defposx-47+(9-10)*480-48-48-300)
+		cameralimit = 5200-defposx-47+(unlockstage-10)*480-48-48+dlcount*48+66;
+		cameralimit = clamp(cameralimit, 1056, 6300-defposx-47+(9-10)*480-48-48-300+66)
     	difference = clamp((pos[0]-4)*48, 1056, cameralimit);
 		
 	} else {
@@ -670,6 +699,8 @@ function step() {
 		}
 	}
 
+	
+
 	camerapos += (difference-camerapos)*.2;
 	cameramod = defposx-camerapos-693+192;
 	pixelzone.fillStyle = "pink";
@@ -685,7 +716,7 @@ function step() {
 		if (pixelgets >= 1 && !secrets) {
 			description = suzumi[pos[0]][clamp(pos[1], 0, suzumi[pos[1]].length)].comment;
 		}
-	} else {
+	} else if (!secrets && description != "Type \"save\" at any time to save, and \"load\" at any time to load.\nGet a certain amount of them correct, and unlock the next ten!\nPixels with stars are actually almost impossible, so don't worry about them much.") {
 		secrets = false;
 		description = "";
 	}
@@ -731,7 +762,7 @@ function drawlayerpixels() {
 	
 	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
 	pixelzone.shadowBlur = 4;
-	if (pos[0]-dlcount < 80 || pos[0]-dlcount > 82 && !(pos[0]-dlcount == 84 && pos[1] == 1)) {
+	if (pos[0]-dlcount < 80 || pos[0]-dlcount > 82 && !(pos[0]-dlcount == 84 && pos[1] == 1) && !(pos[0]-dlcount == 83 && pos[1] == 1)) {
 		pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
 		switch (pos[0]-dlcount) {
 			case 94:
@@ -763,9 +794,33 @@ function drawlayerpixels() {
 				pixelzone.drawImage(unknown, 0, 0, 16, 16, 90, 105, 128, 128);
 				break;
 		}
-	} else if (pos[0] == 84-dlcount && pos[1] == 1) {
+	} else if (pos[0]-dlcount == 84 && pos[1] == 1) {
 		if (suzumi[84+dlcount][1].completed) {
 			pixelzone.drawImage(where, 0, 0, 16, 16, 90, 105, 128, 128);
+		} else {
+			pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
+		}
+	} else if (pos[0]-dlcount == 83 && pos[1] == 1) {
+		if (suzumi[83+dlcount][1].completed) {
+			//pixelzone.drawImage(where, 0, 0, 16, 16, 90, 105, 128, 128);
+			
+			pixelzone.drawImage(spambody, 0, 0, 16, 16, 90+Math.sin(count/20)*6, 105, 128, 128);
+			pixelzone.drawImage(spamleg, 0, 0, 16, 16, 90+Math.sin(count/15)*8, 105+Math.sin(count/15)*8, 128, 128);
+			pixelzone.drawImage(spamarm, 0, 0, 16, 16, 90+Math.sin(count/10)*10, 105+Math.sin((count+40)/15)*8, 128, 128);
+			pixelzone.drawImage(spamarmor, 0, 0, 16, 16, 90, 105+Math.sin(count/20)*6, 128, 128);
+			pixelzone.drawImage(spamwing, 0, 0, 16, 16, 90, 105+Math.sin(count/10)*10, 128, 128);
+			switch (Math.floor(count/20)%3) {
+				case 0:
+					pixelzone.drawImage(spamface1, 0, 0, 16, 16, 90, 105, 128, 128);
+					break;
+				case 1:
+					pixelzone.drawImage(spamface2, 0, 0, 16, 16, 90, 105, 128, 128);
+					break;
+				case 2:
+					pixelzone.drawImage(spamface3, 0, 0, 16, 16, 90, 105, 128, 128);
+					break;
+			}
+			
 		} else {
 			pixelzone.drawImage(bigpixels, pos[0]*16, pos[1]*16, 16, 16, 90, 105, 128, 128);
 		}
@@ -896,20 +951,34 @@ function drawlayerui() {
 				cursorpos1 = 156;
 				break;
 			case -22:
-				cursorpos = -170-camerapos;
-				cursorpos1 = 147;
+				cursorpos = -168-camerapos;
+				cursorpos1 = 148;
 				break;
 		}
 	}
 	cursorapproach += (cursorpos-cursorapproach)*.2;
 	cursorapproach1 += (cursorpos1-cursorapproach1)*.2;
-	if (suzumi[pos[0]][pos[1]].special%2 && (pos[0] > 92+dlcount || pos[0] < 18-dlcount)) {
-		pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
+	if (suzumi[pos[0]][pos[1]].special%2 && (pos[0] > 92+dlcount || pos[0]-dlcount < -19)) {
+		if (pos[0] > 96+dlcount || pos[0]-dlcount < -19) {
+			pixelzone.drawImage(impossiblestar2, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
+		} else {
+			pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
+		}
+		
 	}
-	if (suzumi[pos[0]][pos[1]].completed && (pos[0] > 92+dlcount || pos[0] < 18-dlcount)) {
-		pixelzone.drawImage(diditoutline, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
+	if (suzumi[pos[0]][pos[1]].completed && (pos[0] > 92+dlcount || pos[0]-dlcount < -19)) {
+		if (pos[0] > 96+dlcount || pos[0]-dlcount < -19) {
+			pixelzone.drawImage(diditoutline2, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
+		} else {
+			pixelzone.drawImage(diditoutline, 0, 0, 16, 16, cursorapproach+6, cursorapproach1+6, 48, 48);
+		}
+		
 	}
-	pixelzone.drawImage(cursor, cursorapproach, cursorapproach1, 60, 60);
+	if (pos[0] > 96+dlcount || pos[0]-dlcount < -19) {
+		pixelzone.drawImage(cursor2, cursorapproach, cursorapproach1, 60, 60);
+	} else {
+		pixelzone.drawImage(cursor, cursorapproach, cursorapproach1, 60, 60);
+	}
 	if (state) {
 		pixelzone.drawImage(cursor, pos[2]*100, 300);
 	}
@@ -943,7 +1012,9 @@ document.addEventListener('keydown', function(event) {
 			while (pos[0]-dlcount == 80 || pos[0]-dlcount == 82 || pos[0]-dlcount == -1) {
 				pos[0]--;
 			}
-			secrets = false;
+			
+			secrets = false; 
+			
 			clearinput();
 			break;
 		
@@ -1040,6 +1111,9 @@ function guess() {
 			case 99:
 				Newgrounds.UnlockMedal(20);
 				break;
+			case -22:
+				Newgrounds.UnlockMedal(26);
+				break;
 		}
 		unlockcheck();
 		clearinput();
@@ -1121,18 +1195,17 @@ function unlockcheck() {
 			break;
 		
 		case 150:
-			Newgrounds.UnlockMedal(13);
-			Newgrounds.UnlockMedal();
+			Newgrounds.UnlockMedal(25);
 			break;
 		
 		case 175:
-			Newgrounds.UnlockMedal(14);
+			Newgrounds.UnlockMedal(22);
 			break;
 		case 200:
-			Newgrounds.UnlockMedal();
+			Newgrounds.UnlockMedal(23);
 			break;
 		case 225:
-			Newgrounds.UnlockMedal();
+			Newgrounds.UnlockMedal(24);
 			break;
 		case 240+impossiblegets:
 			Newgrounds.UnlockMedal(15);
@@ -1209,29 +1282,40 @@ function load() {
 	if (supports_html5_storage()) {
 		yabusame = localStorage.getItem("pixeldudes");
 		console.log(yabusame);
-		if (yabusame.length < 800) {
-			var i=22;
-		} else {
-			var i=0;
-		}
+		
 		console.log(i);
 		var extdudes = 0;
 		var talkedd = localStorage.getItem("talking");
-		for (console.log("startload"); i<suzumi.length; i++) {
-			extdudes = 0;
-			for (var j=0; j<suzumi[i].length; j++) {
-				var hoes = yabusame.substring(i*6+(j-extdudes)*2, i*6+(j-extdudes)*2+1);
-				if (suzumi[i][j].special >= 2) {
-					extdudes++;
-					continue;
+		if (yabusame.length < 800) {
+			for (var i=0; i<suzumi.length-dlcount; i++) {
+				extdudes = 0;
+				for (var j=0; j<suzumi[i+dlcount].length; j++) {
+					var hoes = yabusame.substring(i*6+(j-extdudes)*2, i*6+(j-extdudes)*2+1);
+					if (suzumi[i+dlcount][j].special >= 2) {
+						extdudes++;
+						continue;
+					}
+					if (hoes == "1") {
+						suzumi[i+dlcount][j].completed = true;
+					} else {
+						suzumi[i+dlcount][j].completed = false;
+					}
+					console.log(i, j)
 				}
-				if (hoes == "1") {
-					suzumi[i][j].completed = true;
-				} else {
-					suzumi[i][j].completed = false;
+			}
+		} else {console.log("startload")
+			for (var i=0; i<suzumi.length; i++) {
+				for (var j=0; j<suzumi[i].length; j++) {
+					var hoes = yabusame.substring(i*6+j*2, i*6+j*2+1);
+					if (hoes == "1") {
+						suzumi[i][j].completed = true;
+					} else {
+						suzumi[i][j].completed = false;
+					}
 				}
 			}
 		}
+		
 		for (var i=0; i<talkedd.length; i++) {
 				var hoes = talkedd.substring(i*2, i*2+1);
 				if (hoes == "1") {
