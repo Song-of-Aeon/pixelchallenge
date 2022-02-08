@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>aeon from the internet</title>
+    <title>THE IMPOSSIBLE PIXEL CHALLENGE</title>
     <meta charset="utf-8">
     <meta name="impossible pixels" content="AEON'S IMPOSSIBLE PIXEL CHALLENGE">
 	<link href='https://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet'>
@@ -60,12 +60,24 @@
 	maribel.src = "./pixels/maribel.png";
 	const where = new Image(10, 10);
 	where.src = "./pixels/where.png";
+
+	const hal = new Image(10, 10);
+	hal.src = "./pixels/hal.png";
+	const sakura = new Image(10, 10);
+	sakura.src = "./pixels/sakura.png";
+
+	const unknown = new Image(10, 10);
+	unknown.src = "./pixels/unknown.png";
 //}
 
 //loadimages();
 
 //var yabusame = Array(100).fill([false, false, false]);
 var yabusame = [
+[false, false, false],
+[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+[false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
+
 [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
 [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
 [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false], [false, false, false],
@@ -422,10 +434,10 @@ new pixelguy(["Kakkoi"], ["game"], "Gensokyo Odyssey", "comment")],
 new pixelguy(["Stephanie Lazarus Stephens", "lazarus"], ["game?"], "Stephanie Lazarus Stephens", ":)")],
 
 [new pixelguy(["Fuku Tohri", "fuku", "aeon", "minecraft", "thing"], ["player"], "Aeon", "Giving my own Minecraft skin such a name?\nNah, she's too cool to be stuck on blockgame.\nOne of these days, she'll probably meet the mediator.", true),
-new pixelguy(["when the im.png", "sus", "jerma", "impostor", "test", "when"], ["file"], "i made it", "when the um if the impostor was there was going to be an impostor and he could um if he was could have been any of us you wouldnt really like probably um actually dont worry about it", true),
-new pixelguy(["s_mistake", "mistake"], ["file"], "i made it", "", true)],
+new pixelguy(["when the im.png", "sus", "jerma", "impostor", "test", "when"], ["file"], "i made it", "when the um if the impostor was there was going to be an impostor and he could um if he was could have been any of us you wouldnt really like probably um actually dont worry about it", true),],
 
-[new pixelguy(["Kyoka Itazura", "kyoka", "bread man gf", "girlfriend"], ["game"], "Bread Man: the Visual Novel", "Future-knowing anachronist.", true)],
+[new pixelguy(["Kyoka Itazura", "kyoka", "bread man gf", "girlfriend"], ["game"], "Bread Man: the Visual Novel", "Future-knowing anachronist.", true),
+new pixelguy(["s_mistake", "mistake"], ["file"], "i made it", "", true)],
 
 [new pixelguy(["Cirno Fumo (version 1.5)", "cirno", "fumo", "1.5"], ["real"], "ROYALCAT", "Is it just me, or is something weird about to happen...?"),
 new pixelguy(["Cirno Fumo (tanned version)", "tan", "hsifs", "16", "black"], ["real"], "ROYALCAT", "fomu..................."),
@@ -637,38 +649,51 @@ function step() {
 				break;
 			
 		}
-	} else if (pos[0] < 0) {
+	} else if (pos[0]-dlcount < 0) {
 		description = "Type \"save\" at any time to save, and \"load\" at any time to load.\nGet a certain amount of them correct, and unlock the next ten!\nPixels with stars are actually almost impossible, so don't worry about them much.";
 	} else {
 		//secrets = false;
 	}
-	pos[0] = clamp(pos[0], 0, 9+unlockstage*10+dlcount);//suzumi.length-1);
+	if (pixelgets >= 150) {
+		pos[0] = clamp(pos[0], 0, 9+unlockstage*10+dlcount);//suzumi.length-1);
+	} else {
+		pos[0] = clamp(pos[0], dlcount, 9+unlockstage*10+dlcount);//suzumi.length-1);
+	}
 	pos[1] = clamp(pos[1], 0, suzumi[pos[0]].length-1);
 	//pixelzone.clearRect(0, 0, 1000, 400);
 	//cameralooky = (pos[0]-6)*48
 	
-	if (pos[0]-dlcount <= 92 && (pos[0]-dlcount <= 79 || pos[0]-dlcount >= 83)) {
-		cameralimit = 5267-defposx-47+(unlockstage-10)*480-48-48+dlcount*48;
-		cameralimit = clamp(cameralimit, 0, 5267-defposx-47+(9-10)*480-48-48-300)
-    	difference = clamp((pos[0]-4)*48, 0, cameralimit);
+	if (pos[0]-dlcount <= 92 && (pos[0]-dlcount <= 79 || pos[0]-dlcount >= 83) && pos[0]-dlcount >= 0) {
+		cameralimit = 5200-defposx-47+(unlockstage-10)*480-48-48+dlcount*48;
+		cameralimit = clamp(cameralimit, 1056, 6300-defposx-47+(9-10)*480-48-48-300)
+    	difference = clamp((pos[0]-4)*48, 1056, cameralimit);
 		
 	} else {
-		if (pos[0]-dlcount <= 90) {
-			difference = clamp((81-4)*48, 0, cameralimit);
+		if (pos[0]-dlcount == -22) {
+			cameralimit = 529;
+			difference = -500;
+		} else if (pos[0]-dlcount == -21) {
+			cameralimit = 529;
+			difference = -340;
+		} else if (pos[0]-dlcount == -20) {
+			cameralimit = 529;
+			difference = -340;
+		} else if (pos[0]-dlcount < 0) {
+			cameralimit = 529;
+			difference = clamp((pos[0]-4)*48, 80, cameralimit);
+		} else if (pos[0]-dlcount <= 90) {
+			difference = clamp((81-4+dlcount)*48, 0, cameralimit);
 		} else if (pos[0]-dlcount <= 96) {
-			cameralimit = 5267-defposx;
-			difference = clamp(4450, 0, cameralimit);
-		} else if (pos[0]-dlcount <= 0) {
-			cameralimit = 200;
-			difference = cameralimit;
+			cameralimit = 6300-defposx;
+			difference = clamp(5510, 0, cameralimit);
 		} else {
-			cameralimit = 4740;
+			cameralimit = 5796;
 			difference = cameralimit;
 		}
 	}
 
 	camerapos += (difference-camerapos)*.2;
-	cameramod = defposx-camerapos-693;
+	cameramod = defposx-camerapos-693+192;
 	pixelzone.fillStyle = "pink";
 	//pixelzone.fillRect(0, 0, 1000, 400);
 	
@@ -714,16 +739,16 @@ function drawlayerback() {
     
 	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
 	pixelzone.shadowBlur = 4;
-	pixelzone.drawImage(biggerpixels, defposx-cameramod-48-693+48, 0, 4458, 144, defposx-48, defposy, 4458, 144);
+	pixelzone.drawImage(biggerpixels, defposx-cameramod-48-693+48+144, 0, 4458, 144, defposx-48, defposy, 4458, 144);
 	//pixelzone.drawImage(biggerpixels, defposx, defposy);
 	for (var i=0; i<suzumi.length; i++) {
         for (var j=0; j<suzumi[i].length; j++) {
-			if (i < 93 && i != 81 && Math.abs((camerapos/48)-i) < 10) {
-				if (suzumi[i][j].special) {
-					pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
+			if (i < 93 && i != 81 && Math.abs((camerapos/48)-i) < 10 && i-dlcount > -20) {
+				if (suzumi[i][j].special%2) {
+					pixelzone.drawImage(impossiblestar, 0, 0, 16, 16, (i*48)+cameramod+693-192, (j%10)*48+defposy, 48, 48);
 				}
 				if (suzumi[i][j].completed) {
-					pixelzone.drawImage(diditoutline, 0, 0, 16, 16, (i*48)+cameramod, (j%10)*48+defposy, 48, 48);
+					pixelzone.drawImage(diditoutline, 0, 0, 16, 16, (i*48)+cameramod+693-192, (j%10)*48+defposy, 48, 48);
 				}
 			}
 			
@@ -764,6 +789,18 @@ function drawlayerpixels() {
 			case 99:
 			pixelzone.shadowColor = "#C696FF";
 				pixelzone.drawImage(maribel, 0, 0, 16, 16, 90, 105, 128, 128);
+				break;
+			case -20:
+			pixelzone.shadowColor = "#3f3f74";
+				pixelzone.drawImage(hal, 0, 0, 16, 16, 90, 105, 128, 128);
+				break;
+			case -21:
+			pixelzone.shadowColor = "#9595a4";
+				pixelzone.drawImage(sakura, 0, 0, 16, 16, 90, 105, 128, 128);
+				break;
+			case -22:
+			pixelzone.shadowColor = "#FFFFFF";
+				pixelzone.drawImage(unknown, 0, 0, 16, 16, 90, 105, 128, 128);
 				break;
 		}
 	} else if (pos[0] == 84-dlcount && pos[1] == 1) {
@@ -850,8 +887,8 @@ function drawlayerui() {
 	
 	
 	
-	if (pos[0]-dlcount <= 92 && (pos[0]-dlcount <= 79 || pos[0]-dlcount >= 83)) {
-    	cursorpos = cameramod+pos[0]*48-6+693;
+	if (pos[0]-dlcount <= 92 && (pos[0]-dlcount <= 79 || pos[0]-dlcount >= 83) && pos[0]-dlcount > -20) {
+    	cursorpos = cameramod+pos[0]*48-6+693-192;
 		cursorpos1 = pos[1]*48-6+defposy;
 	} else {
 		switch (pos[0]-dlcount) {
@@ -868,32 +905,44 @@ function drawlayerui() {
 				cursorpos = 125;
 				break;
 			case 93:
-				cursorpos = 4960-(Math.random()*80)-camerapos;
+				cursorpos = 6016-(Math.random()*80)-camerapos;
 				cursorpos1 = 185+(Math.random()*30)-15;
 				break;
 			case 94:
-				cursorpos = 4960+(Math.random()*8)-4-camerapos;
+				cursorpos = 6016+(Math.random()*8)-4-camerapos;
 				cursorpos1 = 185+(Math.random()*8)-4;
 				break;
 			case 95:
-				cursorpos = 4960+(Math.random()*45)-camerapos;
+				cursorpos = 6016+(Math.random()*45)-camerapos;
 				cursorpos1 = 185-(Math.random()*80);
 				break;
 			case 96:
-				cursorpos = 4960+(Math.random()*80)-camerapos;
+				cursorpos = 6016+(Math.random()*80)-camerapos;
 				cursorpos1 = 185+(Math.random()*30)-15;
 				break;
 			case 97:
-				cursorpos = 5205-camerapos;
+				cursorpos = 6260-camerapos;
 				cursorpos1 = 142;
 				break;
 			case 98:
-				cursorpos = 5280-camerapos;
+				cursorpos = 6335-camerapos;
 				cursorpos1 = 220;
 				break;
 			case 99:
-				cursorpos = 5385-camerapos;
+				cursorpos = 6440-camerapos;
 				cursorpos1 = 171;
+				break;
+			case -20:
+				cursorpos = 145-camerapos;
+				cursorpos1 = 156;
+				break;
+			case -21:
+				cursorpos = 87-camerapos;
+				cursorpos1 = 156;
+				break;
+			case -22:
+				cursorpos = -170-camerapos;
+				cursorpos1 = 147;
 				break;
 		}
 	}
@@ -975,7 +1024,7 @@ document.addEventListener('keydown', function(event) {
 			shifting = true;
 			break;
 		case 35:
-			pos[0] = 9+unlockstage*10;
+			pos[0] = 9+unlockstage*10+dlcount;
 			break;
 		
 		case 36:
@@ -1002,6 +1051,11 @@ function guess() {
 	} else if (myguy == "load") {
 		load();
 		clearinput();
+		return;
+	} else if (myguy == "cheats") {
+		pixelgets = 300;
+		clearinput();
+		unlockcheck();
 		return;
 	}
 	if (suzumi[pos[0]][pos[1]].completed) {
