@@ -668,7 +668,7 @@ function step() {
 	}
 
 	camerapos += (difference-camerapos)*.2;
-	cameramod = defposx-camerapos;
+	cameramod = defposx-camerapos-693;
 	pixelzone.fillStyle = "pink";
 	//pixelzone.fillRect(0, 0, 1000, 400);
 	
@@ -710,11 +710,11 @@ function step() {
 function drawlayerback() {
 	pixelzone.fillRect(0, 0, 800, 350);
 	//pixelzone.drawImage(truebg, 0, 0);
-	pixelzone.drawImage(bg, defposx-cameramod, 0, 6033, 191, defposx-47, defposy-47, 6033, 191)
+	pixelzone.drawImage(bg, defposx-cameramod, 0, 6824, 191, defposx-47, defposy-47, 6824, 191)
     
 	pixelzone.shadowColor = "rgba(1,1,1,0.6)";
 	pixelzone.shadowBlur = 4;
-	pixelzone.drawImage(biggerpixels, defposx-cameramod-48, 0, 4458, 144, defposx-48, defposy, 4458, 144);
+	pixelzone.drawImage(biggerpixels, defposx-cameramod-48-693+48, 0, 4458, 144, defposx-48, defposy, 4458, 144);
 	//pixelzone.drawImage(biggerpixels, defposx, defposy);
 	for (var i=0; i<suzumi.length; i++) {
         for (var j=0; j<suzumi[i].length; j++) {
@@ -851,7 +851,7 @@ function drawlayerui() {
 	
 	
 	if (pos[0]-dlcount <= 92 && (pos[0]-dlcount <= 79 || pos[0]-dlcount >= 83)) {
-    	cursorpos = cameramod+pos[0]*48-6;
+    	cursorpos = cameramod+pos[0]*48-6+693;
 		cursorpos1 = pos[1]*48-6+defposy;
 	} else {
 		switch (pos[0]-dlcount) {
