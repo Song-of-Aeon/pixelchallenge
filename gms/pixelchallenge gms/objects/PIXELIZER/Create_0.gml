@@ -425,6 +425,14 @@ new pixelguy(["name"], ["type"], "source", "comment")],
 
 ];
 
+
+iterate global.pixeldudes to {
+	double global.pixeldudes gamble {
+		pudes[i][j].x = i*48;
+		pudes[i][j].y = j*48;
+	}
+}
+
 global.dlccount = 0;
 cursor = new vec2();
 cursorvis = new vec2();
@@ -433,3 +441,8 @@ rightprogress = 10;
 #macro pudes global.pixeldudes
 draw_set_font(ft_philosopher);
 global.count = 0;
+var thepix = pudes[global.dlccount][0];
+description = "";
+name = "";
+guess = "";
+global.pixelgets = 0;
