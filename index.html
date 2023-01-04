@@ -883,13 +883,6 @@ function drawlayerui() {
 		pixelzone.shadowOffsetX = 0;
 		wrapText(pixelzone, "From: " + suzumi[pos[0]][pos[1]].hints[0], 50, 20);
 	}
-	if (secrets) {
-		if (!(unlockstage%2)) {
-			pixelzone.fillStyle = "#CC9B86";
-		} else {
-			pixelzone.fillStyle = "#79DBEA";
-		}
-	}
 	wrapText(pixelzone, description, 287, 300);
 	pixelzone.shadowColor = "rgba(1,1,1,1)";
 	pixelzone.shadowBlur = 2;
