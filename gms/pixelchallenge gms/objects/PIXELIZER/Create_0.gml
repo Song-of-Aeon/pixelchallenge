@@ -446,3 +446,4 @@ description = "";
 name = "";
 guess = "";
 global.pixelgets = 0;
+heldcounter = 0;

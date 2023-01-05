@@ -18,5 +18,12 @@ if thepix.completed || true {
 }
 name = thepix.names[0];
 
-key = chr(keyboard_key);
-guess += key;
+
+
+guess = keyboard_string;
+
+if select.hit {
+	if c_guess(thepix, guess, false) {
+		keyboard_string = "";
+	}
+}

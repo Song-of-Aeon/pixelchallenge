@@ -25,8 +25,8 @@ function c_inputload() {
 	nu kinput("up", [vk_up, vk_numpad8]);
 	nu kinput("right", [vk_right, vk_numpad6]);
 	
-	nu kinput("select", ["Z", "A", vk_enter]);
-	nu kinput("back", ["X", "S", vk_escape]);
+	nu kinput("select", [vk_enter]);
+	nu kinput("back", [vk_escape]);
 }
 
 function kinput(name_, keys_) constructor {
