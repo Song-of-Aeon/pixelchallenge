@@ -39,6 +39,7 @@
     {"name":"instance_get_all","path":"scripts/instance_get_all/instance_get_all.yy","order":5,},
     {"name":"scriptable_create","path":"scripts/scriptable_create/scriptable_create.yy","order":18,},
     {"name":"music_set","path":"scripts/music_set/music_set.yy","order":1,},
+    {"name":"bk_everything","path":"sprites/bk_everything/bk_everything.yy","order":6,},
     {"name":"ft_philosopher","path":"fonts/ft_philosopher/ft_philosopher.yy","order":1,},
     {"name":"vlambeer","path":"scripts/vlambeer/vlambeer.yy","order":1,},
     {"name":"array_random","path":"scripts/array_random/array_random.yy","order":12,},

@@ -73,7 +73,7 @@ new pixelguy(["Vessel"], ["game"], "DELTARUNE", "If only, right?")],
 
 
 
-[new pixelguy(["name"], ["type"], "source", "comment")], //0
+[new pixelguy(["name"], ["type"], "source", "comment", u, true)], //0
 
 
 
@@ -274,8 +274,8 @@ new pixelguy(["Dr. Fetus", "fetus"], ["game"], "Meat Boy", "No, it's not Nugget.
 [new pixelguy(["Neptune"], ["game"], "Hyperdimension Neptunia", "It's kinda a good game. At least funny. Well, actually, not really, but"),
 new pixelguy(["Purple Heart", "purple", "god"], ["game"], "Hyperdimension Neptunia", "I think she has a ton of other forms, but I don't know 'em. I only played the first one.")],
 
-[new pixelguy(["  ", "lagko", "lagtrain", "inubakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inubakumori\nNukunuku Nigirimeshi", "She doesn't have a name, does she?\nI just call her \"lagko\", but she shows up in more songs than Lagtrain."),
-new pixelguy(["  ", "lagko", "lagtrain", "inubakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inubakumori\nNukunuku Nigirimeshi", "nakushita kotoba o shiranai nara\npoketto de ni-gi-ri-shi-me-te")],
+[new pixelguy(["  ", "lagko", "lagtrain", "inabakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inabakumori\nNukunuku Nigirimeshi", "She doesn't have a name, does she?\nI just call her \"lagko\", but she shows up in more songs than Lagtrain."),
+new pixelguy(["  ", "lagko", "lagtrain", "inabakumori", "nukunuku", "nigirimeshi", "girl", "kaai", "yuki"], ["music video"], "Inabakumori\nNukunuku Nigirimeshi", "nakushita kotoba o shiranai nara\npoketto de ni-gi-ri-shi-me-te")],
 
 [new pixelguy(["Noel Cerquetti (Witch of Mortal Fate)", "no arm", "witch", "noel", "contract"], ["game"], "Noel The Mortal Fate", "Someone get this man a programmer."),
 new pixelguy(["Noel Cerquetti (Casino)", "gambling", "casino", "dress", "6"], ["game"], "Noel The Mortal Fate Season 6", "But the talksprites are really good, and no better place\nto see that than this chapter (season)."),
@@ -362,11 +362,11 @@ new pixelguy(["Pink"], ["game"], "Everhood", "There are no Absolute Truths.")],
 
 
 
-[new pixelguy(["name"], ["type"], "source", "comment")],
+[new pixelguy(["name"], ["type"], "source", "comment", u, true)],
 
 [new pixelguy(["Lain Iwakura", "lain", "", "wired", "god", "this", "here"], [""], "", "...")],
 
-[new pixelguy(["name"], ["type"], "source", "comment")],
+[new pixelguy(["name"], ["type"], "source", "comment", u, true)],
 
 [new pixelguy(["SPAMTON G. SPAMTON", "spamton", "mail"], ["game"], "DELTARUNE", "* \\\"WOAH-HO [[Newgrounds.com user]] ARE   YOU NEED OF [[Swanky deals]] !\nDON\"T YyOU WORRY [[Your evil little grin]] ABOUT IT.\nTAKE MY GOD DAMN MONEY????? [[https://bit.ly/3mEDCfN]]\\\""),
 new pixelguy(["Spamton NEO", "neo"], ["game"], "DELTARUNE", "Yeah, I'm watching.", 2),
@@ -404,7 +404,7 @@ new pixelguy(["Citizen", "box", "default", "sausage"], ["game"], "s&box", "In th
 [new pixelguy(["Kris"], ["game"], "DELTARUNE", "Don't worry, it's comfy in the cage."),
 new pixelguy(["Kris?", "chara", "not", "someone", "me", "you", "vessel"], ["game"], "* It's you!", "Do you know what it means for yourself to cut those strings?\nYou'll wake up."),
 new pixelguy(["Kris? (dark world)", "dark", "battle"], ["game"], "* It's you!", "* Are you watching, Heaven!?")],
-
+/*
 [new pixelguy(["spr_mysteryman", "gaster", "man", "mystery"], ["fun"], "Nowhere", "* Ha, ha... The thought terrifies me.")],
 [new pixelguy(["Suzumi Kuzu", "hamee", "ardey", "benny", "suzumi"], ["asshole"], "They just appeared", "BIG MISTAKE, YO!")],
 [new pixelguy(["SOMETHING", "mari"], ["???"], "SUNNY", "There's nothing there.")],
@@ -413,7 +413,7 @@ new pixelguy(["Kris? (dark world)", "dark", "battle"], ["game"], "* It's you!", 
 [new pixelguy(["Mediator"], ["???"], "???", "\"Ugh... I've gotta be real careful going back.\nAfter all that, it only took a prank to set them off?\nAt least I can rest here for a bit.\"", true)],
 [new pixelguy(["[i]", "i", "firegame", "isolation"], ["???"], "???", "\"Incredible... I can even travel to a place like this.\"", true)],
 [new pixelguy(["MARIBEL"], ["dream"], "Ghostly Field Club\nYUKARI", "\"...I just have to keep dreaming, and I can do it.\"")],
-
+*/
 
 
 
@@ -425,19 +425,22 @@ new pixelguy(["name"], ["type"], "source", "comment")],
 
 ];
 
-
+global.dlccount = 21;
+pixelsurf = noone;
 iterate global.pixeldudes to {
 	double global.pixeldudes gamble {
+		thelad = i-global.dlccount;
 		pudes[i][j].x = i*48;
 		pudes[i][j].y = j*48;
+		pudes[i][j].index = i+j*115;
 	}
 }
 
-global.dlccount = 0;
-cursor = new vec2();
+
+cursor = new vec2(global.dlccount+1);
 cursorvis = new vec2();
-leftprogress = 0;
-rightprogress = 10;
+leftprogress = -global.dlccount-1;
+rightprogress = 100;
 #macro pudes global.pixeldudes
 draw_set_font(ft_philosopher);
 global.count = 0;

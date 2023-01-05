@@ -27,6 +27,11 @@ function c_inputload() {
 	
 	nu kinput("select", [vk_enter]);
 	nu kinput("back", [vk_escape]);
+	nu kinput("shift", [vk_shift]);
+	nu kinput("home", [vk_home, vk_numpad7]);
+	nu kinput("zend", [vk_end, vk_numpad1]);
+	nu kinput("pgup", [vk_pageup, vk_numpad9]);
+	nu kinput("pgdown", [vk_pagedown, vk_numpad3]);
 }
 
 function kinput(name_, keys_) constructor {
