@@ -1,6 +1,14 @@
 gc++;
 c_inputupdate();
 c_input();
+var a = global.pixelgets;
+unlockstage = 1+(a>=5)+(a>=10)+(a>=20)+(a>=30)+(a>=40)+(a>=50)+(a>=65)+(a>=80)+(a>=100);
+rightprogress = unlockstage*10;
+leftprogress = (a>150)*global.dlccount;
+
+rightprogress = 100;
+leftprogress = -global.dlccount-1;
+
 do {
 	if pgup.hit {
 		cursor.x -= 10;
@@ -29,25 +37,65 @@ do {
 			
 		}
 	}
-	cursor.x = clamp(cursor.x+(right.hit-left.hit)*(shift.hold*4+1), global.dlccount+1+leftprogress, global.dlccount+rightprogress);
-	cursor.y = clamp(cursor.y+(down.hit-up.hit)*(shift.hold*4+1), 0, array_length(pudes[cursor.x])-1);
+	cursor.x += (right.hit-left.hit)*(shift.hold*4+1);
+	cursor.y += (down.hit-up.hit)*(shift.hold*4+1);
+	
+	if cursor.x < max(global.dlccount+1+leftprogress, 0) {
+		cursor.x = max(global.dlccount+1+leftprogress, 0);
+		c_updatedesc(DESC.ESCAPE);
+	}
+	if cursor.x > min(global.dlccount+rightprogress, array_length(pudes)-1) {
+		cursor.x = min(global.dlccount+rightprogress, array_length(pudes)-1);
+		c_updatedesc(DESC.ECHOES);
+	}
+	
+	if cursor.y < 0 {
+		cursor.y = 0;
+		c_updatedesc(DESC.AS_ABOVE);
+	}
+	if cursor.y > array_length(pudes[cursor.x])-1 {
+		cursor.y = array_length(pudes[cursor.x])-1;
+		c_updatedesc(DESC.SO_BELOW);
+	}
 	thepix = pudes[cursor.x][cursor.y];
 } until !thepix.skip;
+if right.hit || left.hit || down.hit || up.hit {
+	c_updatedesc(DESC.PIXEL);
+}
 
 
+cursorvis.x = lerp(cursorvis.x, thepix.x+thepix.xoffset, .1);
+//cursorvis.x = lerp(cursorvis.x, clamp(thepix.x+thepix.xoffset, -pudes[15][0].x-24, 744), .2);
+cursorvis.y = lerp(cursorvis.y, thepix.y+thepix.yoffset, .1);
 
-cursorvis.x = lerp(cursorvis.x, thepix.x+thepix.xoffset, .2);
-cursorvis.y = lerp(cursorvis.y, thepix.y+thepix.yoffset, .2);
-
-iterate global.pixeldudes to {
+/*iterate global.pixeldudes to {
 	double global.pixeldudes gamble {
 		pudes[i][j].step();
 	}
+}*/
+thepix.step();
+
+
+
+if cursor.x > global.dlccount {
+	if cursor.x <= 93+global.dlccount {
+		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -5300, -pudes[26][0].x-24), .2);
+	} else {
+		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -6011, -pudes[26][0].x-24), .2);
+	}
+} else {
+	if cursor.x {
+		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -pudes[15][0].x-24, 94), .2);
+	} else {
+		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -pudes[15][0].x-24, 300), .2);
+	}
 }
-if thepix.completed || true {
+
+
+
+/*if thepix.completed || true {
 	description = thepix.comment;
-}
-name = thepix.names[0];
+}*/
 
 guess = keyboard_string;
 

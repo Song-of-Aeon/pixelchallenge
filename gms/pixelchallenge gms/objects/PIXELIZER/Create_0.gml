@@ -1,13 +1,13 @@
 global.pixeltotal = 0;
 
 global.pixeldudes = [
-[new pixelguy(["#E9471A", "eyalia", "e9471a", "black flame", "?"], [""], "???", "Pity the puppetmaster.", true)],
+[new pixelguy(["#E9471A", "eyalia", "e9471a", "black flame", "?"], [""], "???", "Pity the puppetmaster.", true, u, u, u, u, -482, 27)],
 
 
 
-[new pixelguy(["Ms. Sakura", "sakura", "sensei"], ["un-reality"], "UNREAL LIFE", "In an azure-brushed, scarlet-chased, deep midnight of a world.")],
+[new pixelguy(["Ms. Sakura", "sakura", "sensei"], ["un-reality"], "UNREAL LIFE", "In an azure-brushed, scarlet-chased, deep midnight of a world.", u, u, u, u, u, -272, 36)],
 
-[new pixelguy(["Hal", "haru"], ["un-reality"], "UNREAL LIFE", "Blue-haired, crimson-eyed, white-clad maiden.")],
+[new pixelguy(["Hal", "haru"], ["un-reality"], "UNREAL LIFE", "Blue-haired, crimson-eyed, white-clad maiden.", u, u, u, u, u, -266, 36)],
 
 [new pixelguy(["KawaiiAngel", "kangel"], ["internet"], "Ame", "Have you, too, overdosed on internet?\nWell, get in line, and get in chat.\nhey kangel"),
 new pixelguy(["Ame", "rain"], ["internet"], "NEEDY GIRL OVERDOSE", "Even when I can understand,\nthere's only so much I can do...")],
@@ -369,11 +369,28 @@ new pixelguy(["Pink"], ["game"], "Everhood", "There are no Absolute Truths.")],
 [new pixelguy(["name"], ["type"], "source", "comment", u, true)],
 
 [new pixelguy(["SPAMTON G. SPAMTON", "spamton", "mail"], ["game"], "DELTARUNE", "* \\\"WOAH-HO [[Newgrounds.com user]] ARE   YOU NEED OF [[Swanky deals]] !\nDON\"T YyOU WORRY [[Your evil little grin]] ABOUT IT.\nTAKE MY GOD DAMN MONEY????? [[https://bit.ly/3mEDCfN]]\\\""),
-new pixelguy(["Spamton NEO", "neo"], ["game"], "DELTARUNE", "Yeah, I'm watching.", 2),
+new pixelguy(["Spamton NEO", "neo"], ["game"], "DELTARUNE", "Yeah, I'm watching.", 2, u, u, u, function () {
+	if completed {
+		draw_sprite_ext(s_spamparts, 2, 90+64+sin(gc/20)*6, 105+64, 8, 8, 0, c_white, 1);
+		draw_sprite_ext(s_spamparts, 3, 90+64+sin(gc/15)*8, 105+64+sin(gc/15)*8, 8, 8, 0, c_white, 1);
+		draw_sprite_ext(s_spamparts, 0, 90+64+sin(gc/10)*10, 105+64+sin((gc+40)/15)*8, 8, 8, 0, c_white, 1);
+		draw_sprite_ext(s_spamparts, 1, 90+64+sin(gc/20)*6, 105+64, 8, 8, 0, c_white, 1);
+		draw_sprite_ext(s_spamparts, 4, 90+64+sin(gc/10)*10, 105+64, 8, 8, 0, c_white, 1);
+		draw_sprite_ext(s_spamface, floor(gc/20)%3, 90+64, 105+64, 8, 8, 0, c_white, 1);
+	} else {
+		c_drawmanbig();
+	}
+}),
 new pixelguy(["SWAGTON P. SWAGTON", "swag", "fresh"], ["concept"], "i made it", "KR1S.buddy, KR1S.chum, KR1S.pal, Y0U'R3 T3LL1NG self TH4T Y0U\n41N\"T N0TH1N' BUT A other.guts == false?? D0NT {{Read-only}}, KR1S!\nN0THIN' BUT hip && hop 1N self.dealz();!", 3)],
 
 [new pixelguy(["Susie"], ["game"], "DELTARUNE", "The coolest kid in town. Fuck em up."),
-new pixelguy(["Susie (dark world)", "dark", "1"], ["game"], "DELTARUNE", "* KRIS! WHERE THE FUCK ARE WE?????"),
+new pixelguy(["Susie (dark world)", "dark", "1"], ["game"], "DELTARUNE", "* KRIS! WHERE THE FUCK ARE WE?????", u, u, u, u, function() {
+	if completed {
+		draw_sprite_ext(s_susie, 0, 90+64, 105+64, 8, 8, 0, c_white, 1);
+	} else {
+		c_drawmanbig();
+	}
+}),
 new pixelguy(["Susie (friendly)", "friend", "eye", "2"], ["game"], "DELTARUNE", "* Wait, Kris? ...Where'd they go?\n* Oh, they're just further up.")],
 
 [new pixelguy(["Urotsuki", "2kki", "twokki"], ["game"], "Yume 2kki", "yume tabisuru shoujo"),
@@ -404,16 +421,36 @@ new pixelguy(["Citizen", "box", "default", "sausage"], ["game"], "s&box", "In th
 [new pixelguy(["Kris"], ["game"], "DELTARUNE", "Don't worry, it's comfy in the cage."),
 new pixelguy(["Kris?", "chara", "not", "someone", "me", "you", "vessel"], ["game"], "* It's you!", "Do you know what it means for yourself to cut those strings?\nYou'll wake up."),
 new pixelguy(["Kris? (dark world)", "dark", "battle"], ["game"], "* It's you!", "* Are you watching, Heaven!?")],
-/*
-[new pixelguy(["spr_mysteryman", "gaster", "man", "mystery"], ["fun"], "Nowhere", "* Ha, ha... The thought terrifies me.")],
-[new pixelguy(["Suzumi Kuzu", "hamee", "ardey", "benny", "suzumi"], ["asshole"], "They just appeared", "BIG MISTAKE, YO!")],
-[new pixelguy(["SOMETHING", "mari"], ["???"], "SUNNY", "There's nothing there.")],
-[new pixelguy(["Uboa"], ["fear"], "Madotsuki", "Lights out.")],
 
-[new pixelguy(["Mediator"], ["???"], "???", "\"Ugh... I've gotta be real careful going back.\nAfter all that, it only took a prank to set them off?\nAt least I can rest here for a bit.\"", true)],
-[new pixelguy(["[i]", "i", "firegame", "isolation"], ["???"], "???", "\"Incredible... I can even travel to a place like this.\"", true)],
-[new pixelguy(["MARIBEL"], ["dream"], "Ghostly Field Club\nYUKARI", "\"...I just have to keep dreaming, and I can do it.\"")],
-*/
+[new pixelguy(["spr_mysteryman", "gaster", "man", "mystery", "toby"], ["fun"], "Nowhere", "* Ha, ha... The thought terrifies me.", u, u, function() {
+	if ncm(2, gc) {
+		PIXELIZER.cursorvis.x = lerp(PIXELIZER.cursorvis.x, x+xoffset-80, random(.3));
+		PIXELIZER.cursorvis.y = lerp(PIXELIZER.cursorvis.y, y+yoffset+30, random(.4)-.2);
+	}
+}, c_null, c_null, 131+48, 64)],
+[new pixelguy(["Suzumi Kuzu", "hamee", "ardey", "benny", "suzumi"], ["asshole"], "They just appeared", "BIG MISTAKE, YO!", u, u, function() {
+	if ncm(1, gc) {
+		PIXELIZER.cursorvis.x = lerp(PIXELIZER.cursorvis.x, x+xoffset-irandom(2)+1, .6);
+		PIXELIZER.cursorvis.y = lerp(PIXELIZER.cursorvis.y, y+yoffset-irandom(2)+1, .6);
+	}
+}, c_null, u, 131, 64)],
+[new pixelguy(["SOMETHING", "mari"], ["???"], "SUNNY", "There's nothing there.", u, u, function() {
+	if ncm(2, gc) {
+		PIXELIZER.cursorvis.x = lerp(PIXELIZER.cursorvis.x, x+xoffset+45, random(.3));
+		PIXELIZER.cursorvis.y = lerp(PIXELIZER.cursorvis.y, y+yoffset-80, random(.3));
+	}
+}, c_null, c_null, 131-48, 64)],
+[new pixelguy(["Uboa"], ["fear"], "Madotsuki", "Lights out.", u, u, function() {
+	if ncm(2, gc) {
+		PIXELIZER.cursorvis.x = lerp(PIXELIZER.cursorvis.x, x+xoffset+80, random(.3));
+		PIXELIZER.cursorvis.y = lerp(PIXELIZER.cursorvis.y, y+yoffset+30, random(.4)-.2);
+	}
+}, c_null, c_null, 131-96, 64)],
+
+[new pixelguy(["Mediator"], ["???"], "???", "\"Ugh... I've gotta be real careful going back.\nAfter all that, it only took a prank to set them off?\nAt least I can rest here for a bit.\"", true, u, u, c_null, u, 237, 21)],
+[new pixelguy(["[i]", "i", "firegame", "isolation"], ["???"], "???", "\"Incredible... I can even travel to a place like this.\"", true, u, u, c_null, u, 261, 93)],
+[new pixelguy(["MARIBEL"], ["dream"], "Ghostly Field Club\nYUKARI", "\"...I just have to keep dreaming, and I can do it.\"", u, u, u, c_null, u, 321, 51)],
+
 
 
 
@@ -441,6 +478,9 @@ cursor = new vec2(global.dlccount+1);
 cursorvis = new vec2();
 leftprogress = -global.dlccount-1;
 rightprogress = 100;
+unlockstage = 0;
+camerapos = 0;
+cameragoal = 0;
 #macro pudes global.pixeldudes
 draw_set_font(ft_philosopher);
 global.count = 0;
