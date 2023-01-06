@@ -6,6 +6,7 @@
     {"id":{"name":"PIXELIZER","path":"objects/PIXELIZER/PIXELIZER.yy",},"order":0,},
     {"id":{"name":"log","path":"scripts/log/log.yy",},"order":0,},
     {"id":{"name":"draw_polygon","path":"scripts/draw_polygon/draw_polygon.yy",},"order":0,},
+    {"id":{"name":"c_glitchtext","path":"scripts/c_glitchtext/c_glitchtext.yy",},"order":0,},
     {"id":{"name":"easemult","path":"scripts/easemult/easemult.yy",},"order":0,},
     {"id":{"name":"clampneg","path":"scripts/clampneg/clampneg.yy",},"order":0,},
     {"id":{"name":"array_compose","path":"scripts/array_compose/array_compose.yy",},"order":0,},

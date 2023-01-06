@@ -24,6 +24,8 @@ function c_null() {
 #macro c_aolu $FF8080
 #macro c_gold $73D1FA
 #macro c_violet $E643A0
+#macro c_roulette $7C7C9E
+#macro c_roboticist $C6AC4B
 #macro prog for
 #macro dial switch
 #macro stupidfalse false

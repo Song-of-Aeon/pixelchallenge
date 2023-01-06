@@ -6,8 +6,8 @@ unlockstage = 1+(a>=5)+(a>=10)+(a>=20)+(a>=30)+(a>=40)+(a>=50)+(a>=65)+(a>=80)+(
 rightprogress = unlockstage*10;
 leftprogress = (a>150)*global.dlccount;
 
-rightprogress = 100;
-leftprogress = -global.dlccount-1;
+//rightprogress = 100;
+//leftprogress = -global.dlccount-1;
 
 do {
 	if pgup.hit {
@@ -58,14 +58,17 @@ do {
 		c_updatedesc(DESC.SO_BELOW);
 	}
 	thepix = pudes[cursor.x][cursor.y];
+	if thepix.skip && cursor.y cursor.y--;
+	thepix = pudes[cursor.x][cursor.y];
 } until !thepix.skip;
-if right.hit || left.hit || down.hit || up.hit {
+if (right.hit || left.hit || down.hit || up.hit) && !diddesc {
+	keyboard_string = "";
 	c_updatedesc(DESC.PIXEL);
 }
+diddesc = false;
 
 
 cursorvis.x = lerp(cursorvis.x, thepix.x+thepix.xoffset, .1);
-//cursorvis.x = lerp(cursorvis.x, clamp(thepix.x+thepix.xoffset, -pudes[15][0].x-24, 744), .2);
 cursorvis.y = lerp(cursorvis.y, thepix.y+thepix.yoffset, .1);
 
 /*iterate global.pixeldudes to {
@@ -75,6 +78,7 @@ cursorvis.y = lerp(cursorvis.y, thepix.y+thepix.yoffset, .1);
 }*/
 thepix.step();
 
+alpher = lerp(alpher, (thepix.names[0] != "Lain Iwakura")/*-abs(cursorvis.x-(thepix.x+thepix.xoffset))/48*/, .1);
 
 
 if cursor.x > global.dlccount {
