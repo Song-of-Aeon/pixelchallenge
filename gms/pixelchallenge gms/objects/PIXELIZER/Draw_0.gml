@@ -13,7 +13,11 @@ draw_sprite(bk_everything, 1, 3412, 1);
 var thelad;
 iterate global.pixeldudes to {
 	double global.pixeldudes gamble {
-		pudes[i][j].draw(24+greatoffset, 72);
+		with pudes[i][j] {
+			if x+xoffset+greatoffset+24 > -PIXELIZER.camerapos && x+xoffset+greatoffset+24 < -PIXELIZER.camerapos+1000 {
+				draw(24+greatoffset, 72);
+			}
+		}
 	}
 }
 if (cursor.x < 3) || (cursor.x > array_length(pudes)-4) {

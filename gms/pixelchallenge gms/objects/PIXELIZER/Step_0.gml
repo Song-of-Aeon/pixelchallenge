@@ -83,7 +83,6 @@ thepix.step();
 
 alpher = lerp(alpher, (thepix.names[0] != "Lain Iwakura")/*-abs(cursorvis.x-(thepix.x+thepix.xoffset))/48*/, .1);
 
-
 if cursor.x > global.dlccount {
 	if cursor.x <= 93+global.dlccount {
 		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -5300, -pudes[26][0].x-23), .2);
