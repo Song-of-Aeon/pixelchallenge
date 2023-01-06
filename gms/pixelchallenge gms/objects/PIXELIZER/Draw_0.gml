@@ -9,6 +9,7 @@ if !surface_exists(pixelsurf) {
 surface_set_target(pixelsurf);
 draw_clear_alpha(make_color_hsv((gc/2)%255, 150, 200), 1);
 draw_sprite(bk_everything, 0, 0, 1);
+draw_sprite(bk_everything, 1, 3412, 1);
 var thelad;
 iterate global.pixeldudes to {
 	double global.pixeldudes gamble {
@@ -39,6 +40,7 @@ draw_rectangle(0, 0, 36, 350, false);
 
 draw_sprite(s_uilines, 0, 0, 0);
 draw_set_color(c_white);
+draw_set_font(ft_philosopher);
 var thesources = "";
 if thepix.completed {
 	thesources = thepix.source;
@@ -52,7 +54,6 @@ draw_text(50, 5, thesources);
 thepix.bigdraw();
 
 //draw_rectangle(xdraw+cursorvis.x-16, ydraw+cursorvis.y-16, xdraw+cursorvis.x+16, ydraw+cursorvis.y+16, true);
-draw_set_font(ft_philosopher);
 switch borderdesc {
 	case 1:
 	case 3:

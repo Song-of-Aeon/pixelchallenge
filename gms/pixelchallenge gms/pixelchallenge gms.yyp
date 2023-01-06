@@ -20,6 +20,7 @@
     {"id":{"name":"c_achievementcheck","path":"scripts/c_achievementcheck/c_achievementcheck.yy",},"order":0,},
     {"id":{"name":"c_guess","path":"scripts/c_guess/c_guess.yy",},"order":0,},
     {"id":{"name":"point_me","path":"scripts/point_me/point_me.yy",},"order":0,},
+    {"id":{"name":"c_save","path":"scripts/c_save/c_save.yy",},"order":0,},
     {"id":{"name":"array_insert_array","path":"scripts/array_insert_array/array_insert_array.yy",},"order":0,},
     {"id":{"name":"c_updatedesc","path":"scripts/c_updatedesc/c_updatedesc.yy",},"order":0,},
     {"id":{"name":"array_greatest","path":"scripts/array_greatest/array_greatest.yy",},"order":0,},
