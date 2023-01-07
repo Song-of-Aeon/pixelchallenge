@@ -21,7 +21,7 @@ function pixelguy(names_=["named"], hints_=["hinted"], source_="sourced", commen
 
 function c_drawman(xoffsetwo, yoffsetwo) {
 	//draw_sprite_shadow(mouse_x,mouse_y,EVERYTHING,27,100,100,c_blue,0.1);
-	//draw_sprite_shadow(EVERYTHING, index, x+xoffset+xoffsetwo+16*3+4, y+xoffset+yoffsetwo+4+16*3,16*3,16*3,c_black,0.1);
+	draw_sprite_shadow(EVERYTHING, index, x+xoffset+xoffsetwo-24+5, y+xoffset+yoffsetwo-24+5,16*3,16*3,c_black,0.1);
 	draw_sprite_ext(EVERYTHING, index, x+xoffset+xoffsetwo, y+xoffset+yoffsetwo, 3, 3, 0, c_white, 1);
 	if completed && ! ((PIXELIZER.cursor.x < 3) || (PIXELIZER.cursor.x > array_length(pudes)-4)) {
 		draw_sprite_ext(s_completed, 0, x+xoffset+xoffsetwo, y+xoffset+yoffsetwo, 3, 3, 0, c_white, 1);
