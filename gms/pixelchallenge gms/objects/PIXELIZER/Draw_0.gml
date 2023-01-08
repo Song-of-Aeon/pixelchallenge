@@ -1,7 +1,7 @@
 
 var xdraw = 270;
 var ydraw = 144+6-72;
-var greatoffset = 548
+var greatoffset = 548;
 
 if !surface_exists(pixelsurf) {
 	pixelsurf = surface_create(9000, 48*4);
