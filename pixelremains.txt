@@ -1,0 +1,9 @@
+- blur effect
+- colored blur effect
+- special interactions
+ = mediator
+ = [i]
+- certain replacements
+- achievements
+- additions
+- review
