@@ -31,7 +31,7 @@ new pixelguy(["Ice Land", "ice"], ["image"], "i made it", "We at Ice Land are in
 new pixelguy(["Tsubame", "rockefeller", "nightcore", "black fox"], ["image"], "Naru Nanao", "I'm pretty sure, like 80%, that this kid's name is Tsubame.\nI could be wrong, I'm self-translating poor scans of a 2010 doujin book.\n...This book isn't very classy. Don't look it up.")],
 
 [new pixelguy(["Alex Eggleston", "alex"], ["game..."], "YIIK: A Postmodern RPG", "bit.ly/3r4uRy7"),
-new pixelguy(["Proto-Alex", "proto", "alex"], ["game..."], "YIIK: A Postmodern RPG", "Jesus \"Bugs Bunny\" Christ. Holey Ass Shit Balls.\nWhat the hell is going on in this game.\nDon't expect me to play it to find out.")],
+new pixelguy(["Proto-Alex", "proto", "alex"], ["game..."], "YIIK: A Postmodern RPG", "Jesus \"Bugs Bunny\" Christ. Holey Ass Shit Balls.\nWhat the hell is going on in this game.\One day I'll play it and find out.")],
 
 [new pixelguy(["Fone Bone", "bone", "fone"], ["comic"], "Bone", "Lots of eyebrows around these parts, huh?\nThey were surprisingly easy to implement."),
 new pixelguy(["Phoney Bone", "phoney", "star"], ["comic"], "Bone", "What a \"chosen one\", huh?\nI have an incredible amount of respect for his schemes. Wario? Eddy? Reimu?\nThat's nothing, this guy runs Nestle-level scams all by himself."),
@@ -46,7 +46,7 @@ new pixelguy(["Benson (Death Kwon Do)", "death"], ["cartoon"], "Regular Show", "
 new pixelguy(["Yuuto Ichika", "yuuto", "bootleg"], ["game"], "Super Ledgehop: Double Laser", "Popularized by Rivals of Aether, justifiably so.\nShe's a great fighter there.\n(I mean, I played her original game first...)"),
 new pixelguy(["Rachel Heartway", "rachel"], ["concept"], "Touaoii Project\nr/Touhou", "I hope you're all grateful.\nI had to try to remember a four year old Reddit joke for this one.")],
 
-[new pixelguy(["DJ Professor K", "dj", "prof"], ["game"], "Jet Set Radio", "I was hoping for Rhythm Masters, but now,\nI can't imagine anyone else winning."),
+[new pixelguy(["DJ Professor K", "dj", "prof", "callaghan"], ["game"], "Jet Set Radio", "I was hoping for Rhythm Masters, but now,\nI can't imagine anyone else winning."),
 new pixelguy(["DJ Professor K (JSRF)", "future", "another", "kfad", "2", "jsrf"], ["game"], "Jet Set Radio: Future", "JET\nSET\nRADIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO")],
 
 [new pixelguy(["Nora"], ["game"], "Cytus II", "\"Those are your thoughts... your memories.\nThey are proof of your existence.\""),

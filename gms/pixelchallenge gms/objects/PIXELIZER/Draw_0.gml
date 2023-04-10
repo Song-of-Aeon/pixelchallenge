@@ -6,11 +6,15 @@ var greatoffset = 548;
 if !surface_exists(pixelsurf) {
 	pixelsurf = surface_create(9000, 48*4);
 }
+log(surface_get_target());
+//c_shadowdrawing();
 surface_set_target(pixelsurf);
 draw_clear_alpha(make_color_hsv((gc/2)%255, 150, 200), 1);
 draw_sprite(bk_everything, 0, 0, 1);
 draw_sprite(bk_everything, 1, 3412, 1);
 var thelad;
+log(surface_get_target());
+c_shadowdrawing();
 iterate global.pixeldudes to {
 	double global.pixeldudes gamble {
 		with pudes[i][j] {
@@ -20,6 +24,8 @@ iterate global.pixeldudes to {
 		}
 	}
 }
+
+
 if (cursor.x < 3) || (cursor.x > array_length(pudes)-4) {
 	if thepix.special {
 		draw_sprite_ext(s_impossiblestar, 1, cursorvis.x+24+greatoffset, cursorvis.y+72, 3, 3, 0, c_white, 1);
@@ -31,7 +37,7 @@ if (cursor.x < 3) || (cursor.x > array_length(pudes)-4) {
 draw_sprite_ext(s_cursor, (cursor.x < 3) | (cursor.x > array_length(pudes)-4), cursorvis.x+24+greatoffset, cursorvis.y+72, 3, 3, 0, c_white, alpher);
 
 surface_reset_target();
-
+//c_shadowdrawing();
 draw_surface(pixelsurf, camerapos+xdraw+265-greatoffset, ydraw);
 draw_set_valign(fa_top);
 draw_set_color(c_black);

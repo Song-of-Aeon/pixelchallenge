@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "array_condense",
+  "name": "c_shadowdrawing",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "array",
-    "path": "folders/Scripts/data/array.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

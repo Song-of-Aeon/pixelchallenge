@@ -43,8 +43,8 @@ do {
 	cursor.x += (right.hit-left.hit)*(shift.hold*4+1);
 	cursor.y += (down.hit-up.hit)*(shift.hold*4+1);
 	
-	if cursor.x < max(global.dlccount+1+leftprogress, 0) {
-		cursor.x = max(global.dlccount+1+leftprogress, 0);
+	if cursor.x < max(global.dlccount+leftprogress, 0) {
+		cursor.x = max(global.dlccount+leftprogress, 0);
 		c_updatedesc(DESC.ESCAPE);
 	}
 	if cursor.x > min(global.dlccount+rightprogress, array_length(pudes)-1) {
@@ -85,17 +85,22 @@ alpher = lerp(alpher, (thepix.names[0] != "Lain Iwakura")/*-abs(cursorvis.x-(the
 
 if cursor.x > global.dlccount {
 	if cursor.x <= 93+global.dlccount {
-		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -5300, -pudes[26][0].x-23), .2);
+		//camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -5300, -pudes[26][0].x-23), .2);
+		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, max(-5300, -pudes[global.dlccount+rightprogress][0].x+218), -pudes[26][0].x-23), .2);
 	} else {
 		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -6011, -pudes[26][0].x-24), .2);
 	}
 } else {
-	if cursor.x {
+	if cursor.x >= 3 {
+		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -pudes[15][0].x-24, -358), .2);
+	} else if cursor.x {
 		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -pudes[15][0].x-24, 94), .2);
 	} else {
 		camerapos = lerp(camerapos, clamp(-thepix.xoffset-thepix.x-24, -pudes[15][0].x-24, 300), .2);
 	}
 }
+log(camerapos);
+log(thepix.x);
 
 
 

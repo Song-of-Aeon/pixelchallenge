@@ -1,4 +1,3 @@
-- blur effect
 - colored blur effect
 - special interactions
  = mediator
@@ -7,3 +6,4 @@
 - achievements
 - additions
 - review
+- edit [i]
