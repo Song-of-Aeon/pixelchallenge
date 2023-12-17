@@ -17,9 +17,9 @@ function draw_sprite_shadow(sprite,index,x,y,width,height,color = 0,blurRadius =
 	draw_sprite_stretched(sprite,index,margin,margin,width,height);
 	surface_reset_target()
 
-	shader_set(z_gauss13)
+	shader_set(z_gauss13);
 	gpu_set_blendmode(bm_add);
-	gpu_set_blendmode_ext(bm_one,bm_src_alpha_sat)
+	gpu_set_blendmode_ext(bm_one,bm_src_alpha_sat);
 	var iterations = 10;
 	//gpu_set_blendmode_ext_sepalpha(bm_src_alpha,bm_dest_alpha,bm_src_alpha,bm_dest_alpha)
 	for(var i = 0; i < iterations; i++){
