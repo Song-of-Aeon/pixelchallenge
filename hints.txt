@@ -1,0 +1,2 @@
+pixelchallenge should have triggerable HINTS !!
+if you enter a partially correct thing
